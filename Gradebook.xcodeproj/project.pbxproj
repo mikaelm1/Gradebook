@@ -15,6 +15,8 @@
 		700608FA1CB1611300EAA791 /* GradebookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700608F91CB1611300EAA791 /* GradebookUITests.swift */; };
 		700609091CB1634A00EAA791 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700609081CB1634A00EAA791 /* LoginVC.swift */; };
 		7006090B1CB166D200EAA791 /* ClassesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7006090A1CB166D200EAA791 /* ClassesTableVC.swift */; };
+		7006090D1CB16F1800EAA791 /* ClassDetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7006090C1CB16F1800EAA791 /* ClassDetailTableVC.swift */; };
+		7006090F1CB176AA00EAA791 /* AddClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7006090E1CB176AA00EAA791 /* AddClassVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		700608FB1CB1611300EAA791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		700609081CB1634A00EAA791 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7006090A1CB166D200EAA791 /* ClassesTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesTableVC.swift; sourceTree = "<group>"; };
+		7006090C1CB16F1800EAA791 /* ClassDetailTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassDetailTableVC.swift; sourceTree = "<group>"; };
+		7006090E1CB176AA00EAA791 /* AddClassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 			children = (
 				700609081CB1634A00EAA791 /* LoginVC.swift */,
 				7006090A1CB166D200EAA791 /* ClassesTableVC.swift */,
+				7006090C1CB16F1800EAA791 /* ClassDetailTableVC.swift */,
+				7006090E1CB176AA00EAA791 /* AddClassVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -271,7 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				700609091CB1634A00EAA791 /* LoginVC.swift in Sources */,
+				7006090D1CB16F1800EAA791 /* ClassDetailTableVC.swift in Sources */,
 				7006090B1CB166D200EAA791 /* ClassesTableVC.swift in Sources */,
+				7006090F1CB176AA00EAA791 /* AddClassVC.swift in Sources */,
 				700608DA1CB1611300EAA791 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
