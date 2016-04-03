@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		700608DA1CB1611300EAA791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700608D91CB1611300EAA791 /* AppDelegate.swift */; };
-		700608DC1CB1611300EAA791 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700608DB1CB1611300EAA791 /* ViewController.swift */; };
 		700608DF1CB1611300EAA791 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 700608DD1CB1611300EAA791 /* Main.storyboard */; };
 		700608E11CB1611300EAA791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700608E01CB1611300EAA791 /* Assets.xcassets */; };
 		700608E41CB1611300EAA791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 700608E21CB1611300EAA791 /* LaunchScreen.storyboard */; };
 		700608EF1CB1611300EAA791 /* GradebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700608EE1CB1611300EAA791 /* GradebookTests.swift */; };
 		700608FA1CB1611300EAA791 /* GradebookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700608F91CB1611300EAA791 /* GradebookUITests.swift */; };
+		700609091CB1634A00EAA791 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700609081CB1634A00EAA791 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		700608D61CB1611300EAA791 /* Gradebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gradebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		700608D91CB1611300EAA791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		700608DB1CB1611300EAA791 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		700608DE1CB1611300EAA791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		700608E01CB1611300EAA791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		700608E31CB1611300EAA791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		700608F51CB1611300EAA791 /* GradebookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradebookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		700608F91CB1611300EAA791 /* GradebookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookUITests.swift; sourceTree = "<group>"; };
 		700608FB1CB1611300EAA791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		700609081CB1634A00EAA791 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,8 @@
 		700608D81CB1611300EAA791 /* Gradebook */ = {
 			isa = PBXGroup;
 			children = (
+				700609071CB1633500EAA791 /* Controller */,
 				700608D91CB1611300EAA791 /* AppDelegate.swift */,
-				700608DB1CB1611300EAA791 /* ViewController.swift */,
 				700608DD1CB1611300EAA791 /* Main.storyboard */,
 				700608E01CB1611300EAA791 /* Assets.xcassets */,
 				700608E21CB1611300EAA791 /* LaunchScreen.storyboard */,
@@ -123,6 +123,14 @@
 				700608FB1CB1611300EAA791 /* Info.plist */,
 			);
 			path = GradebookUITests;
+			sourceTree = "<group>";
+		};
+		700609071CB1633500EAA791 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				700609081CB1634A00EAA791 /* LoginVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				700608DC1CB1611300EAA791 /* ViewController.swift in Sources */,
+				700609091CB1634A00EAA791 /* LoginVC.swift in Sources */,
 				700608DA1CB1611300EAA791 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
