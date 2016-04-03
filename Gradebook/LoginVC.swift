@@ -17,5 +17,8 @@ class LoginVC: UIViewController {
     }
 
     
+    @IBAction func signInPressed(sender: AnyObject) {
+        performSegueWithIdentifier("goToClassesList", sender: nil)
+    }
 
 }
