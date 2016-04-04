@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class ClassesTableVC: UITableViewController {
+    
+    var sharedContext: NSManagedObjectContext {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +24,9 @@ class ClassesTableVC: UITableViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(ClassesTableVC.addButtonPressed))
         self.navigationItem.rightBarButtonItem = addButton
         self.title = "Classes"
+        
+        sharedContext 
+        
     }
 
     func addButtonPressed() {
