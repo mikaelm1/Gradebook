@@ -23,6 +23,7 @@
 		702EAA661CB2CCE30011EB69 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 702EAA641CB2CCE30011EB69 /* Model.xcdatamodeld */; };
 		702EAA681CB2CD0D0011EB69 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EAA671CB2CD0D0011EB69 /* CoreDataStackManager.swift */; };
 		702EAA6A1CB30E050011EB69 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EAA691CB30E050011EB69 /* CourseCell.swift */; };
+		702EAA6C1CB31B300011EB69 /* CourseDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EAA6B1CB31B300011EB69 /* CourseDetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		702EAA651CB2CCE30011EB69 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		702EAA671CB2CD0D0011EB69 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 		702EAA691CB30E050011EB69 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		702EAA6B1CB31B300011EB69 /* CourseDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				702EAA691CB30E050011EB69 /* CourseCell.swift */,
+				702EAA6B1CB31B300011EB69 /* CourseDetailCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				700609131CB17B9F00EAA791 /* Course.swift in Sources */,
+				702EAA6C1CB31B300011EB69 /* CourseDetailCell.swift in Sources */,
 				702EAA631CB2CB310011EB69 /* Grade.swift in Sources */,
 				700609151CB17E8900EAA791 /* Assignment.swift in Sources */,
 				702EAA6A1CB30E050011EB69 /* CourseCell.swift in Sources */,

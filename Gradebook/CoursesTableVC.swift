@@ -48,6 +48,12 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
         print("Add button pressed")
         performSegueWithIdentifier("AddClass", sender: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showCourseDetail" {
+            print("Prepared for segueue")
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -74,6 +80,10 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Selected cell at index \(indexPath)")
+        let course = fetchedResultsController.objectAtIndexPath(indexPath) as! Course
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("CourseDetailTableVC") as! CourseDetailTableVC
+        vc.course = course
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     
