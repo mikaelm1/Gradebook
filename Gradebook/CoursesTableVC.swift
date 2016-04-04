@@ -62,7 +62,11 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ClassCell", forIndexPath: indexPath)
+        
+        let course = fetchedResultsController.objectAtIndexPath(indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("CourseCell") as! CourseCell
+        
+        cell.courseNameLabel.text = course.name 
 
 
         return cell

@@ -86,7 +86,7 @@
                             <color key="backgroundColor" red="0.28030620810000001" green="0.56731840629999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ClassCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassCell" rowHeight="119" id="mUr-wM-hds">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" rowHeight="119" id="mUr-wM-hds" customClass="CourseCell" customModule="Gradebook" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="194" width="600" height="119"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mUr-wM-hds" id="hWn-cR-2D8">
@@ -122,6 +122,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="courseNameLabel" destination="MCP-VC-5Na" id="q6Q-rW-EOZ"/>
                                     <segue destination="wZD-FY-x6U" kind="show" id="ZHp-YA-sOx"/>
                                 </connections>
                             </tableViewCell>

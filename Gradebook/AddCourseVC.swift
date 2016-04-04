@@ -49,7 +49,9 @@ class AddCourseVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveButtonPressed(sender: AnyObject) {
         let courseName = courseNameField.text
-        let course = Course(name: courseName!, context: sharedContext, assignments: nil)
+        _ = Course(name: courseName!, context: sharedContext, assignments: nil)
+        
+        CoreDataStackManager.sharedInstance().saveContext()
         
         navigationController?.popViewControllerAnimated(true)
     }
