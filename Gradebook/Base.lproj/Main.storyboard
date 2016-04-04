@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="340" y="356"/>
         </scene>
-        <!--Classes TableVC-->
+        <!--Courses TableVC-->
         <scene sceneID="BnL-n2-1Md">
             <objects>
-                <tableViewController id="2Rj-n6-rAm" customClass="ClassesTableVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2Rj-n6-rAm" customClass="CoursesTableVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="119" sectionHeaderHeight="28" sectionFooterHeight="28" id="h9b-BD-edE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="1924" y="350"/>
         </scene>
-        <!--Add ClassVC-->
+        <!--Add CourseVC-->
         <scene sceneID="WCh-jQ-9Tt">
             <objects>
-                <viewController id="QgH-8a-zPe" customClass="AddClassVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QgH-8a-zPe" customClass="AddCourseVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jEf-f4-RYw"/>
                         <viewControllerLayoutGuide type="bottom" id="fPr-Tw-x69"/>
@@ -188,15 +188,18 @@
                             <constraint firstItem="m8n-Jn-3Q5" firstAttribute="top" secondItem="jEf-f4-RYw" secondAttribute="bottom" constant="200" id="kob-j3-yE3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="courseNameField" destination="m8n-Jn-3Q5" id="pOM-Mg-fua"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbj-Q0-gzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1924" y="1070"/>
         </scene>
-        <!--Class Detail TableVC-->
+        <!--Course Detail TableVC-->
         <scene sceneID="Ddj-I0-K1o">
             <objects>
-                <tableViewController id="wZD-FY-x6U" customClass="ClassDetailTableVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="wZD-FY-x6U" customClass="CourseDetailTableVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="jKj-7I-1I8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

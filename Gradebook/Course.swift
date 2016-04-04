@@ -33,7 +33,7 @@ class Course: NSManagedObject {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
     }
     
-    init(name: String, assignments: [Assignment]?, context: NSManagedObjectContext) {
+    init(name: String, context: NSManagedObjectContext, assignments: [Assignment]?) {
         
         let entity = NSEntityDescription.entityForName("Course", inManagedObjectContext: context)!
         super.init(entity: entity, insertIntoManagedObjectContext: context)

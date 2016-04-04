@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ClassesTableVC: UITableViewController, NSFetchedResultsControllerDelegate {
+class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var sharedContext: NSManagedObjectContext {
         return CoreDataStackManager.sharedInstance().managedObjectContext
@@ -38,7 +38,8 @@ class ClassesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     }
     
     func setUpUI() {
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(ClassesTableVC.addButtonPressed))
+        print("Setting up UI")
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(CoursesTableVC.addButtonPressed))
         self.navigationItem.rightBarButtonItem = addButton
         self.title = "Classes"
     }
