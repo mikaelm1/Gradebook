@@ -79,7 +79,7 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("Selected cell at index \(indexPath)")
+        //print("Selected cell at index \(indexPath)")
         let course = fetchedResultsController.objectAtIndexPath(indexPath) as! Course
         let vc = storyboard?.instantiateViewControllerWithIdentifier("CourseDetailTableVC") as! CourseDetailTableVC
         vc.course = course

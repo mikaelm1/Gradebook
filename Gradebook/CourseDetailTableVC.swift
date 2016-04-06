@@ -21,7 +21,7 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
         let fetchRequest = NSFetchRequest(entityName: "Assignment")
         fetchRequest.sortDescriptors = []
         fetchRequest.predicate = NSPredicate(format: "course == %@", self.course)
-        //print("FetchRequest; \(fetchRequest)")
+        print("FetchRequest; \(fetchRequest)")
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.sharedContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         return fetchedResultsController
@@ -30,12 +30,17 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            print("Unable to fetch Assignment")
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         setUpUI()
+        tableView.reloadData()
     }
     
     func setUpUI() {
@@ -46,6 +51,7 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
     
     func addAssignment() {
         let vc = storyboard?.instantiateViewControllerWithIdentifier("AssignmentVC") as! AssignmentVC
+        vc.course = course 
         navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -61,9 +67,11 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ClassDetailCell", forIndexPath: indexPath)
-
-
+        let assignment = fetchedResultsController.objectAtIndexPath(indexPath) as! Assignment
+        print("Assignment: \(assignment)")
+        let cell = tableView.dequeueReusableCellWithIdentifier("ClassDetailCell", forIndexPath: indexPath) as! CourseDetailCell 
+        cell.assignmentNameLabel.text = assignment.assignmentTitle
+        
         return cell
     }
     

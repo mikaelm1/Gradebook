@@ -16,6 +16,8 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     @IBOutlet weak var assignmentTitleField: UITextField!
     @IBOutlet weak var assignmentDescriptionField: UITextView!
     
+    var course: Course! 
+    
     var pickerView: UIPickerView!
     //var grades = ["A", "B", "C", "D", "F"]
     var grades = Grade.GradeLetter.allGrades
@@ -126,20 +128,34 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     // MARK - Actions
     
     @IBAction func saveButtonPressed(sender: AnyObject) {
+        
+        var assignmentDesc = "No description entered."
+        
         print("Save button pressed")
-        if gradeReceivedField.text == nil || gradeReceivedField.text == "" {
+        
+        guard let grade = gradeReceivedField.text where grade != "" else {
             sendAlert("Please enter a grade.", fieldNeeded: gradeReceivedField)
-        } else if gradeWeightField.text == nil || gradeWeightField.text == "" {
-            sendAlert("Please enter the percent this assignment has in the course.", fieldNeeded: gradeWeightField)
-        } else if assignmentTitleField.text == nil || assignmentTitleField.text == "" {
-            sendAlert("Please enter a title for the assignment", fieldNeeded: assignmentTitleField)
+            return
         }
         
-        let title = assignmentTitleField.text!
-        let weight = Double(gradeWeightField.text!)
-        let grade = getGrade(gradeReceivedField.text!)
+        guard let weight = Double(gradeWeightField.text!) else {
+            sendAlert("Please enter the percent this assignment has in the course.", fieldNeeded: gradeWeightField)
+            return
+        }
         
-        //let assignment = Assignment(assignmentTitle: title, gradeWeight: weight!, grade: grade, context: sharedContext, assignmentDescription: nil)
+        guard let title = assignmentTitleField.text where title != "" else {
+            sendAlert("Please enter a title for the assignment", fieldNeeded: assignmentTitleField)
+            return
+        }
+        
+        let gradeValue = getGrade(grade)
+        
+        let assignment = Assignment(assignmentTitle: title, gradeWeight: weight, grade: gradeValue, context: sharedContext, assignmentDescription: assignmentDesc)
+        assignment.course = course
+        
+        CoreDataStackManager.sharedInstance().saveContext()
+        
+        navigationController?.popViewControllerAnimated(true)
     }
     
     func getGrade(letter: String) -> Double {
@@ -149,7 +165,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         let grade = grades[selectedGradeIndex].getGradeValue()
         print("Grade Value: \(grade)")
         
-        return grade 
+        return grade
     }
 
 }

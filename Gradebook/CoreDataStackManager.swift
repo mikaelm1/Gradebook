@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-private let SQLITE_FILE_NAME = "FavoriteActors.sqlite"
+private let SQLITE_FILE_NAME = "Gradebook.sqlite"
 
 class CoreDataStackManager {
     

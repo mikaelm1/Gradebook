@@ -9,9 +9,8 @@
 import UIKit
 
 class CourseDetailCell: UITableViewCell {
-
-    @IBOutlet weak var assignmentNameField: UITextField!
     
+    @IBOutlet weak var assignmentNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
