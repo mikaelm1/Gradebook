@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
@@ -16,13 +17,21 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     @IBOutlet weak var assignmentDescriptionField: UITextView!
     
     var pickerView: UIPickerView!
-    var grades = ["A", "B", "C", "D", "F"]
+    //var grades = ["A", "B", "C", "D", "F"]
+    var grades = Grade.GradeLetter.allGrades
+    var sharedContext: NSManagedObjectContext {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpPickers()
         setUpFields()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -35,6 +44,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         gradeReceivedField.delegate = self
         gradeWeightField.delegate = self
         assignmentTitleField.delegate = self
+        print(grades)
     }
     
     func setUpPickers() {
@@ -63,7 +73,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         print("\(pickerView.selectedRowInComponent(0))")
         let selectedItem = pickerView.selectedRowInComponent(0)
         if selectedItem == 0 {
-            gradeReceivedField.text = grades[selectedItem]
+            gradeReceivedField.text = grades[selectedItem].rawValue
         }
         gradeReceivedField.resignFirstResponder()
     }
@@ -76,7 +86,6 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         let alert = UIAlertController(title: "Invalid Entry", message: message, preferredStyle: .Alert)
         let action = UIAlertAction(title: "Ok", style: .Default) { (action) in
             
-            self.dismissViewControllerAnimated(true, completion: nil)
             fieldNeeded.becomeFirstResponder()
         }
         
@@ -95,11 +104,11 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return grades[row]
+        return grades[row].rawValue
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        gradeReceivedField.text = grades[row]
+        gradeReceivedField.text = grades[row].rawValue
     }
     
     // MARK - Text Field Delegate 
@@ -125,6 +134,22 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         } else if assignmentTitleField.text == nil || assignmentTitleField.text == "" {
             sendAlert("Please enter a title for the assignment", fieldNeeded: assignmentTitleField)
         }
+        
+        let title = assignmentTitleField.text!
+        let weight = Double(gradeWeightField.text!)
+        let grade = getGrade(gradeReceivedField.text!)
+        
+        //let assignment = Assignment(assignmentTitle: title, gradeWeight: weight!, grade: grade, context: sharedContext, assignmentDescription: nil)
+    }
+    
+    func getGrade(letter: String) -> Double {
+        let selectedGradeIndex = pickerView.selectedRowInComponent(0)
+        print("Selected grade: \(selectedGradeIndex)")
+        
+        let grade = grades[selectedGradeIndex].getGradeValue()
+        print("Grade Value: \(grade)")
+        
+        return grade 
     }
 
 }

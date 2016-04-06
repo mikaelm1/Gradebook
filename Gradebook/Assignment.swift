@@ -11,7 +11,8 @@ import CoreData
 
 class Assignment: NSManagedObject {
     
-    @NSManaged var assignmentDescription: String
+    @NSManaged var assignmentTitle: String
+    @NSManaged var assignmentDescription: String?
     @NSManaged var gradeWeight: Double
     @NSManaged var course: Course
     @NSManaged var grade: Double
@@ -20,14 +21,17 @@ class Assignment: NSManagedObject {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
     }
     
-    init(assignmentDescription: String, gradeWeight: Double, grade: Double, context: NSManagedObjectContext) {
+    init(assignmentTitle: String, gradeWeight: Double, grade: Double, context: NSManagedObjectContext, assignmentDescription: String?) {
         
         let entity = NSEntityDescription.entityForName("Assignment", inManagedObjectContext: context)!
         super.init(entity: entity, insertIntoManagedObjectContext: context)
         
-        self.assignmentDescription = assignmentDescription
+        self.assignmentTitle = assignmentTitle
         self.gradeWeight = gradeWeight
-        self.grade = grade 
+        self.grade = grade
+        if let desc = assignmentDescription {
+            self.assignmentDescription = desc
+        }
     }
     
 }

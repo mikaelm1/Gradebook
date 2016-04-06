@@ -35,8 +35,18 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        
-        self.title = course.name
+        setUpUI()
+    }
+    
+    func setUpUI() {
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(CourseDetailTableVC.addAssignment))
+        navigationItem.rightBarButtonItem = addButton
+        title = course.name
+    }
+    
+    func addAssignment() {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("AssignmentVC") as! AssignmentVC
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     // MARK: - Table view data source
