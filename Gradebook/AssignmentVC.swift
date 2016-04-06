@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var gradeWeightField: UITextField!
     @IBOutlet weak var gradeReceivedField: UITextField!
@@ -22,6 +22,19 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         super.viewDidLoad()
         
         setUpPickers()
+        setUpFields()
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    // MARK - Helper methods
+    
+    func setUpFields() {
+        gradeReceivedField.delegate = self
+        gradeWeightField.delegate = self
+        assignmentTitleField.delegate = self
     }
     
     func setUpPickers() {
@@ -35,9 +48,9 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         toolBar.tintColor = UIColor.grayColor()
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(AssignmentVC.pickerDoneButtonPressed))
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(AssignmentVC.pickerCancelPressed))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(AssignmentVC.pickerDoneButtonPressed))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(AssignmentVC.pickerDoneButtonPressed))
         
         toolBar.setItems([doneButton, spaceButton, cancelButton], animated: true)
         
@@ -47,8 +60,31 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerDoneButtonPressed() {
+        print("\(pickerView.selectedRowInComponent(0))")
+        let selectedItem = pickerView.selectedRowInComponent(0)
+        if selectedItem == 0 {
+            gradeReceivedField.text = grades[selectedItem]
+        }
         gradeReceivedField.resignFirstResponder()
     }
+    
+    func pickerCancelPressed() {
+        gradeReceivedField.resignFirstResponder()
+    }
+    
+    func sendAlert(message: String, fieldNeeded: UITextField) {
+        let alert = UIAlertController(title: "Invalid Entry", message: message, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "Ok", style: .Default) { (action) in
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+            fieldNeeded.becomeFirstResponder()
+        }
+        
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    // MARK - Picker View Delegate
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -65,10 +101,30 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         gradeReceivedField.text = grades[row]
     }
+    
+    // MARK - Text Field Delegate 
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        //textField.becomeFirstResponder()
+        return true
+    }
 
+    // MARK - Actions
     
     @IBAction func saveButtonPressed(sender: AnyObject) {
         print("Save button pressed")
+        if gradeReceivedField.text == nil || gradeReceivedField.text == "" {
+            sendAlert("Please enter a grade.", fieldNeeded: gradeReceivedField)
+        } else if gradeWeightField.text == nil || gradeWeightField.text == "" {
+            sendAlert("Please enter the percent this assignment has in the course.", fieldNeeded: gradeWeightField)
+        } else if assignmentTitleField.text == nil || assignmentTitleField.text == "" {
+            sendAlert("Please enter a title for the assignment", fieldNeeded: assignmentTitleField)
+        }
     }
 
 }
