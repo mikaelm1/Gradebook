@@ -52,7 +52,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         gradeReceivedField.text = assignment.gradeLetter
         gradeWeightField.text = "\(assignment.gradeWeight)"
         assignmentTitleField.text = assignment.assignmentTitle
-        assignmentDescriptionField.text = assignment.assignmentDescription 
+        assignmentDescriptionField.text = assignment.assignmentDescription
     }
     
     func setUpFields() {
@@ -161,11 +161,23 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             return
         }
         
+        if let desc = assignmentDescriptionField.text {
+            assignmentDesc = desc
+        }
+        
         let gradeValue = getGrade(grade)
         
-        let assignment = Assignment(assignmentTitle: title, gradeWeight: weight, gradeValue: gradeValue, gradeLetter: grade, context: sharedContext, assignmentDescription: assignmentDesc)
-        assignment.course = course
-        
+        if assignment == nil {
+            let assignmentToSave = Assignment(assignmentTitle: title, gradeWeight: weight, gradeValue: gradeValue, gradeLetter: grade, context: sharedContext, assignmentDescription: assignmentDesc)
+            assignmentToSave.course = course
+        } else {
+            assignment?.setValue(title, forKey: "assignmentTitle")
+            assignment?.setValue(weight, forKey: "gradeWeight")
+            assignment?.setValue(gradeValue, forKey: "gradeValue")
+            assignment?.setValue(grade, forKey: "gradeLetter")
+            assignment?.setValue(assignmentDesc, forKey: "assignmentDescription")
+        }
+
         CoreDataStackManager.sharedInstance().saveContext()
         
         navigationController?.popViewControllerAnimated(true)
