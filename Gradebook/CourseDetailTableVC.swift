@@ -70,9 +70,19 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
         let assignment = fetchedResultsController.objectAtIndexPath(indexPath) as! Assignment
         print("Assignment: \(assignment)")
         let cell = tableView.dequeueReusableCellWithIdentifier("ClassDetailCell", forIndexPath: indexPath) as! CourseDetailCell 
-        cell.assignmentNameLabel.text = assignment.assignmentTitle
+        configureCell(cell, assignment: assignment)
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("Selected cell at row \(indexPath.row)")
+        
+        let assignment = fetchedResultsController.objectAtIndexPath(indexPath) as! Assignment
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("AssignmentVC") as! AssignmentVC
+        vc.course = course
+        vc.assignment = assignment
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Fetched Results Controller Delegate
@@ -103,9 +113,9 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
             
         case .Update:
-            let cell = tableView.cellForRowAtIndexPath(indexPath!)
-            let assignment = controller.objectAtIndexPath(indexPath!)
-            // TODO: configure the cell with the new course
+            let cell = tableView.cellForRowAtIndexPath(indexPath!) as! CourseDetailCell
+            let assignment = controller.objectAtIndexPath(indexPath!) as! Assignment
+            configureCell(cell, assignment: assignment)
             
         case .Move:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
@@ -115,6 +125,13 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         tableView.endUpdates()
+    }
+    
+    // MARK - Configure Cell
+    
+    func configureCell(cell: CourseDetailCell, assignment: Assignment) {
+        cell.assignmentNameLabel.text = assignment.assignmentTitle
+        cell.assignmentGradeLabel.text = "\(assignment.gradeLetter)"
     }
 
 

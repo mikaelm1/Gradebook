@@ -16,7 +16,8 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     @IBOutlet weak var assignmentTitleField: UITextField!
     @IBOutlet weak var assignmentDescriptionField: UITextView!
     
-    var course: Course! 
+    var course: Course!
+    var assignment: Assignment?
     
     var pickerView: UIPickerView!
     //var grades = ["A", "B", "C", "D", "F"]
@@ -34,6 +35,11 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        
+        if assignment != nil {
+            print("The assignment is not nil")
+            fillInFieldsForAssignment(assignment!)
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -41,6 +47,13 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     // MARK - Helper methods
+    
+    func fillInFieldsForAssignment(assignment: Assignment) {
+        gradeReceivedField.text = assignment.gradeLetter
+        gradeWeightField.text = "\(assignment.gradeWeight)"
+        assignmentTitleField.text = assignment.assignmentTitle
+        assignmentDescriptionField.text = assignment.assignmentDescription 
+    }
     
     func setUpFields() {
         gradeReceivedField.delegate = self
@@ -150,7 +163,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         
         let gradeValue = getGrade(grade)
         
-        let assignment = Assignment(assignmentTitle: title, gradeWeight: weight, grade: gradeValue, context: sharedContext, assignmentDescription: assignmentDesc)
+        let assignment = Assignment(assignmentTitle: title, gradeWeight: weight, gradeValue: gradeValue, gradeLetter: grade, context: sharedContext, assignmentDescription: assignmentDesc)
         assignment.course = course
         
         CoreDataStackManager.sharedInstance().saveContext()

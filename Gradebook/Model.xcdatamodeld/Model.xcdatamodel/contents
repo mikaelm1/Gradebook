@@ -3,7 +3,8 @@
     <entity name="Assignment" representedClassName=".Assignment" syncable="YES">
         <attribute name="assignmentDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="assignmentTitle" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="grade" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="gradeLetter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gradeValue" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="gradeWeight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="course" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="assignments" inverseEntity="Course" syncable="YES"/>
     </entity>
@@ -12,7 +13,7 @@
         <relationship name="assignments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Assignment" inverseName="course" inverseEntity="Assignment" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Assignment" positionX="-54" positionY="-9" width="128" height="120"/>
+        <element name="Assignment" positionX="-54" positionY="-9" width="128" height="135"/>
         <element name="Course" positionX="-63" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

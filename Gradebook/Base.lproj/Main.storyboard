@@ -242,6 +242,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.066666666669999999" green="0.57254901960000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="assignmentGradeLabel" destination="Z69-kg-TiK" id="5wt-ak-45q"/>
                                     <outlet property="assignmentNameLabel" destination="S5C-Uw-PjN" id="vVt-Xd-gn7"/>
                                 </connections>
                             </tableViewCell>
