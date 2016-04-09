@@ -51,17 +51,48 @@
                                     <action selector="signInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XDa-mZ-PLq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njj-Yh-xc4">
+                                <rect key="frame" x="70" y="350" width="460" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="hZF-uA-rHk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Continue With Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookLoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZIo-rm-REJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEM-Xq-yeZ">
+                                <rect key="frame" x="70" y="238" width="460" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="singUpPresed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Agd-or-ZPt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XeD-oP-KNb" firstAttribute="top" secondItem="VEM-Xq-yeZ" secondAttribute="bottom" constant="12" id="5mm-T3-miI"/>
                             <constraint firstItem="K7X-TZ-plE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="9cO-kq-I5N"/>
                             <constraint firstItem="K7X-TZ-plE" firstAttribute="top" secondItem="Hnv-sc-Ay5" secondAttribute="bottom" constant="20" id="CJj-W3-gex"/>
                             <constraint firstItem="XeD-oP-KNb" firstAttribute="top" secondItem="K7X-TZ-plE" secondAttribute="bottom" constant="50" id="D8u-Qg-7W5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="njj-Yh-xc4" secondAttribute="trailing" constant="50" id="Q9j-PW-vjF"/>
+                            <constraint firstItem="VEM-Xq-yeZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="UIU-im-G4W"/>
                             <constraint firstItem="Hnv-sc-Ay5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="XXz-It-bzz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Hnv-sc-Ay5" secondAttribute="trailing" constant="50" id="aJA-Zv-MgP"/>
                             <constraint firstItem="Hnv-sc-Ay5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="ati-1g-Ljb"/>
+                            <constraint firstItem="VEM-Xq-yeZ" firstAttribute="top" secondItem="K7X-TZ-plE" secondAttribute="bottom" constant="8" id="ats-Bf-aUn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XeD-oP-KNb" secondAttribute="trailing" constant="50" id="bnw-rv-1kt"/>
                             <constraint firstItem="XeD-oP-KNb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="eBX-cr-Gew"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VEM-Xq-yeZ" secondAttribute="trailing" constant="50" id="sKT-pO-FXl"/>
+                            <constraint firstItem="njj-Yh-xc4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="t5Z-UM-CuY"/>
+                            <constraint firstItem="njj-Yh-xc4" firstAttribute="top" secondItem="XeD-oP-KNb" secondAttribute="bottom" constant="25" id="u4f-rF-DXA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K7X-TZ-plE" secondAttribute="trailing" constant="50" id="zXr-tb-ocy"/>
                         </constraints>
                     </view>
