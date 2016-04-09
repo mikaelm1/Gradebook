@@ -201,31 +201,33 @@
         <scene sceneID="Ddj-I0-K1o">
             <objects>
                 <tableViewController storyboardIdentifier="CourseDetailTableVC" id="wZD-FY-x6U" customClass="CourseDetailTableVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" id="jKj-7I-1I8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" id="jKj-7I-1I8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailCell" rowHeight="82" id="yXN-yR-yuq" customClass="CourseDetailCell" customModule="Gradebook" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="82"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailCell" rowHeight="106" id="yXN-yR-yuq" customClass="CourseDetailCell" customModule="Gradebook" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yXN-yR-yuq" id="4UJ-vO-l64">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="81.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="106"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UOy-7t-R1l">
-                                            <rect key="frame" x="8" y="8" width="584" height="66"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alD-fi-eEH">
+                                            <rect key="frame" x="8" y="8" width="584" height="90"/>
+                                            <color key="backgroundColor" red="0.28030620810000001" green="0.56731840629999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="UOy-7t-R1l">
+                                            <rect key="frame" x="16" y="16" width="568" height="74"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5C-Uw-PjN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="449" height="66"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="S5C-Uw-PjN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="462" height="74"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z69-kg-TiK">
-                                                    <rect key="frame" x="459" y="0.0" width="125" height="66"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z69-kg-TiK">
+                                                    <rect key="frame" x="462" y="0.0" width="106" height="74"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -235,15 +237,31 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="UOy-7t-R1l" firstAttribute="leading" secondItem="4UJ-vO-l64" secondAttribute="leadingMargin" id="5P5-H4-fF5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="alD-fi-eEH" secondAttribute="bottom" id="FWW-xK-dHb"/>
+                                        <constraint firstItem="UOy-7t-R1l" firstAttribute="top" secondItem="4UJ-vO-l64" secondAttribute="topMargin" constant="8" id="Fqm-sJ-KQF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="UOy-7t-R1l" secondAttribute="bottom" constant="8" id="GEF-87-xfM"/>
+                                        <constraint firstItem="alD-fi-eEH" firstAttribute="top" secondItem="4UJ-vO-l64" secondAttribute="topMargin" id="J2E-c7-AaD"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="UOy-7t-R1l" secondAttribute="trailing" constant="8" id="QjT-fL-dRk"/>
+                                        <constraint firstItem="UOy-7t-R1l" firstAttribute="leading" secondItem="4UJ-vO-l64" secondAttribute="leadingMargin" constant="8" id="Rn9-06-fAW"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="UOy-7t-R1l" secondAttribute="bottom" id="T7V-p3-yQn"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="alD-fi-eEH" secondAttribute="trailing" id="bPh-ch-d5j"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="UOy-7t-R1l" secondAttribute="trailing" id="cm8-4P-l4G"/>
                                         <constraint firstItem="UOy-7t-R1l" firstAttribute="top" secondItem="4UJ-vO-l64" secondAttribute="topMargin" id="nXe-Sd-nS3"/>
+                                        <constraint firstItem="alD-fi-eEH" firstAttribute="leading" secondItem="4UJ-vO-l64" secondAttribute="leadingMargin" id="zhY-8m-u9S"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="5P5-H4-fF5"/>
+                                            <exclude reference="T7V-p3-yQn"/>
+                                            <exclude reference="cm8-4P-l4G"/>
+                                            <exclude reference="nXe-Sd-nS3"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.066666666669999999" green="0.57254901960000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="assignmentGradeLabel" destination="Z69-kg-TiK" id="5wt-ak-45q"/>
                                     <outlet property="assignmentNameLabel" destination="S5C-Uw-PjN" id="vVt-Xd-gn7"/>
+                                    <outlet property="cellView" destination="alD-fi-eEH" id="pfR-bS-rU3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

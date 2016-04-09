@@ -10,12 +10,17 @@ import UIKit
 
 class CourseDetailCell: UITableViewCell {
     
+    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var assignmentNameLabel: UILabel!
     @IBOutlet weak var assignmentGradeLabel: UILabel! 
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        cellView.layer.cornerRadius = 5.0
+        cellView.clipsToBounds = true
+        
+        assignmentNameLabel.textColor = UIColor.whiteColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
