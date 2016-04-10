@@ -134,5 +134,10 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
         cell.assignmentGradeLabel.text = "\(assignment.gradeLetter)"
     }
 
+    @IBAction func viewGradePressed(sender: AnyObject) {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("CourseGradeVC") as! CourseGradeVC
+        vc.course = course
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
 }

@@ -21,7 +21,6 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     var assignment: Assignment?
     
     var pickerView: UIPickerView!
-    //var grades = ["A", "B", "C", "D", "F"]
     var grades = Grade.GradeLetter.allGrades
     var sharedContext: NSManagedObjectContext {
         return CoreDataStackManager.sharedInstance().managedObjectContext

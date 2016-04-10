@@ -29,6 +29,7 @@
 		708F35A71CB95779007BA11B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F35A51CB95779007BA11B /* FBSDKLoginKit.framework */; };
 		708F35A81CB95779007BA11B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F35A61CB95779007BA11B /* FBSDKShareKit.framework */; };
 		708F35AB1CB971C0007BA11B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F35AA1CB971C0007BA11B /* Constants.swift */; };
+		708F35AD1CBABE94007BA11B /* CourseGradeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F35AC1CBABE94007BA11B /* CourseGradeVC.swift */; };
 		C854388255803782DBA6817B /* Pods_Gradebook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2798071055D28C82C5609D6 /* Pods_Gradebook.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		708F35A51CB95779007BA11B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		708F35A61CB95779007BA11B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		708F35AA1CB971C0007BA11B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		708F35AC1CBABE94007BA11B /* CourseGradeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseGradeVC.swift; sourceTree = "<group>"; };
 		D2798071055D28C82C5609D6 /* Pods_Gradebook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gradebook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -177,6 +179,7 @@
 				7006090C1CB16F1800EAA791 /* CourseDetailTableVC.swift */,
 				7006090E1CB176AA00EAA791 /* AddCourseVC.swift */,
 				702EAA6D1CB341990011EB69 /* AssignmentVC.swift */,
+				708F35AC1CBABE94007BA11B /* CourseGradeVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				700609151CB17E8900EAA791 /* Assignment.swift in Sources */,
 				702EAA6A1CB30E050011EB69 /* CourseCell.swift in Sources */,
 				702EAA681CB2CD0D0011EB69 /* CoreDataStackManager.swift in Sources */,
+				708F35AD1CBABE94007BA11B /* CourseGradeVC.swift in Sources */,
 				700609091CB1634A00EAA791 /* LoginVC.swift in Sources */,
 				702EAA6E1CB341990011EB69 /* AssignmentVC.swift in Sources */,
 				7006090D1CB16F1800EAA791 /* CourseDetailTableVC.swift in Sources */,

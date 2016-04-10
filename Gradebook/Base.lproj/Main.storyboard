@@ -230,6 +230,43 @@
             </objects>
             <point key="canvasLocation" x="1924" y="1070"/>
         </scene>
+        <!--Course GradeVC-->
+        <scene sceneID="BBk-Za-ucb">
+            <objects>
+                <viewController storyboardIdentifier="CourseGradeVC" id="b6B-Hq-ixc" customClass="CourseGradeVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Vn-9Q-4tb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tmh-1V-1Kb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v7d-VY-4fR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvb-6u-2KX">
+                                <rect key="frame" x="70" y="114" width="460" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="gAF-Xb-BDS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tvb-6u-2KX" firstAttribute="leading" secondItem="v7d-VY-4fR" secondAttribute="leadingMargin" constant="50" id="c7y-ea-p5t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tvb-6u-2KX" secondAttribute="trailing" constant="50" id="l1p-nS-vVq"/>
+                            <constraint firstItem="tvb-6u-2KX" firstAttribute="top" secondItem="0Vn-9Q-4tb" secondAttribute="bottom" constant="94" id="qUt-Ge-OEY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="testLabel" destination="tvb-6u-2KX" id="ttD-Es-W4H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nEL-md-DfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2749" y="-418"/>
+        </scene>
         <!--Course Detail TableVC-->
         <scene sceneID="Ddj-I0-K1o">
             <objects>
@@ -238,9 +275,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="hUD-jD-A3S">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yay-YY-61Y">
+                                    <rect key="frame" x="246" y="31" width="109" height="36"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                    <state key="normal" title="View Grade">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="viewGradePressed:" destination="wZD-FY-x6U" eventType="touchUpInside" id="uHe-9w-zuB"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.29680358019999997" green="0.59545712019999997" blue="0.79643429489999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="Yay-YY-61Y" firstAttribute="centerY" secondItem="hUD-jD-A3S" secondAttribute="centerY" id="2SH-LE-tGR"/>
+                                <constraint firstItem="Yay-YY-61Y" firstAttribute="centerX" secondItem="hUD-jD-A3S" secondAttribute="centerX" id="J3R-Uv-t07"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailCell" rowHeight="106" id="yXN-yR-yuq" customClass="CourseDetailCell" customModule="Gradebook" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="106"/>
+                                <rect key="frame" x="0.0" y="126" width="600" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yXN-yR-yuq" id="4UJ-vO-l64">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="106"/>
@@ -308,7 +367,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edh-pf-R6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2625" y="350"/>
+            <point key="canvasLocation" x="2749" y="356"/>
         </scene>
         <!--AssignmentVC-->
         <scene sceneID="53K-Kt-GFB">
@@ -430,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6A-Jv-tjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3331" y="350"/>
+            <point key="canvasLocation" x="3475" y="356"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rfz-Bm-zV6">
