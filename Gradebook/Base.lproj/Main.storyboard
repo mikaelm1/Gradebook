@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hnv-sc-Ay5">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@yahoo.com" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hnv-sc-Ay5">
                                 <rect key="frame" x="70" y="120" width="460" height="45"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -28,7 +28,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7X-TZ-plE">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7X-TZ-plE">
                                 <rect key="frame" x="70" y="185" width="460" height="45"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -130,8 +130,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUk-3b-W2C">
                                             <rect key="frame" x="8" y="8" width="584" height="103"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Structures" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="MCP-VC-5Na">
-                                                    <rect key="frame" x="8" y="8" width="418" height="87"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Structures" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="MCP-VC-5Na">
+                                                    <rect key="frame" x="8" y="8" width="568" height="87"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -141,7 +141,7 @@
                                             <constraints>
                                                 <constraint firstItem="MCP-VC-5Na" firstAttribute="leading" secondItem="NUk-3b-W2C" secondAttribute="leadingMargin" id="270-29-wUe"/>
                                                 <constraint firstItem="MCP-VC-5Na" firstAttribute="bottom" secondItem="NUk-3b-W2C" secondAttribute="bottomMargin" id="3X0-c8-ieC"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="MCP-VC-5Na" secondAttribute="trailing" constant="150" id="ToZ-Yd-6tS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MCP-VC-5Na" secondAttribute="trailing" id="ToZ-Yd-6tS"/>
                                                 <constraint firstItem="MCP-VC-5Na" firstAttribute="top" secondItem="NUk-3b-W2C" secondAttribute="topMargin" id="qyN-tj-dgo"/>
                                             </constraints>
                                         </view>
@@ -328,7 +328,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="INs-c8-J25">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade Received" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oM9-T2-bnh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Letter Grade Received" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oM9-T2-bnh">
                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="30"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -344,8 +344,27 @@
                                             <constraint firstItem="oM9-T2-bnh" firstAttribute="width" secondItem="haE-gY-zRo" secondAttribute="width" multiplier="5" id="HLj-1k-7qM"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MeI-hI-W37">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-kR-wiC">
                                         <rect key="frame" x="0.0" y="50" width="560" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujJ-fU-yTh">
+                                                <rect key="frame" x="0.0" y="0.0" width="450" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUj-bZ-nGu">
+                                                <rect key="frame" x="470" y="0.0" width="90" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ujJ-fU-yTh" firstAttribute="width" secondItem="VUj-bZ-nGu" secondAttribute="width" multiplier="5" id="L53-Ei-QwO"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MeI-hI-W37">
+                                        <rect key="frame" x="0.0" y="100" width="560" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgM-Ki-9y4">
                                                 <rect key="frame" x="0.0" y="0.0" width="458.5" height="30"/>
@@ -364,19 +383,19 @@
                                         </constraints>
                                     </stackView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Assignment Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DrB-gs-Fq1">
-                                        <rect key="frame" x="0.0" y="100" width="560" height="60"/>
+                                        <rect key="frame" x="0.0" y="150" width="560" height="60"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Assignment Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Oam-iz-dZb">
-                                        <rect key="frame" x="0.0" y="180" width="560" height="291.5"/>
+                                        <rect key="frame" x="0.0" y="230" width="560" height="250"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvw-7l-Kcq">
-                                        <rect key="frame" x="0.0" y="491.5" width="560" height="58.5"/>
+                                        <rect key="frame" x="0.0" y="500" width="560" height="50"/>
                                         <color key="backgroundColor" red="0.066666666669999999" green="0.57254901960000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                         <state key="normal" title="Save">
@@ -405,6 +424,7 @@
                         <outlet property="assignmentDescriptionField" destination="Oam-iz-dZb" id="mts-Gf-dc8"/>
                         <outlet property="assignmentTitleField" destination="DrB-gs-Fq1" id="sEF-uV-VHk"/>
                         <outlet property="gradeReceivedField" destination="haE-gY-zRo" id="wqU-AK-uBl"/>
+                        <outlet property="gradeScoreField" destination="VUj-bZ-nGu" id="2ZB-D3-kzq"/>
                         <outlet property="gradeWeightField" destination="kls-Qd-G1a" id="A4Y-cI-BlC"/>
                     </connections>
                 </viewController>

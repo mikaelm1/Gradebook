@@ -11,6 +11,7 @@ import CoreData
 
 class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
+    @IBOutlet weak var gradeScoreField: UITextField!
     @IBOutlet weak var gradeWeightField: UITextField!
     @IBOutlet weak var gradeReceivedField: UITextField!
     @IBOutlet weak var assignmentTitleField: UITextField!
@@ -161,6 +162,11 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             return
         }
         
+        guard let gradeScore = Double(gradeScoreField.text!) else {
+            sendAlert("Please enter a score between 0 and 100", fieldNeeded: gradeScoreField)
+            return 
+        }
+        
         if let desc = assignmentDescriptionField.text {
             assignmentDesc = desc
         }
@@ -168,7 +174,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         let gradeValue = getGrade(grade)
         
         if assignment == nil {
-            let assignmentToSave = Assignment(assignmentTitle: title, gradeWeight: weight, gradeValue: gradeValue, gradeLetter: grade, context: sharedContext, assignmentDescription: assignmentDesc)
+            let assignmentToSave = Assignment(assignmentTitle: title, gradeWeight: weight, gradeValue: gradeValue, gradeLetter: grade, context: sharedContext, assignmentDescription: assignmentDesc, gradeScore: gradeScore)
             assignmentToSave.course = course
         } else {
             assignment?.setValue(title, forKey: "assignmentTitle")

@@ -17,12 +17,13 @@ class Assignment: NSManagedObject {
     @NSManaged var course: Course
     @NSManaged var gradeValue: Double
     @NSManaged var gradeLetter: String
+    @NSManaged var gradeScore: Double
 
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
     }
     
-    init(assignmentTitle: String, gradeWeight: Double, gradeValue: Double, gradeLetter: String, context: NSManagedObjectContext, assignmentDescription: String) {
+    init(assignmentTitle: String, gradeWeight: Double, gradeValue: Double, gradeLetter: String, context: NSManagedObjectContext, assignmentDescription: String, gradeScore: Double) {
         
         let entity = NSEntityDescription.entityForName("Assignment", inManagedObjectContext: context)!
         super.init(entity: entity, insertIntoManagedObjectContext: context)
@@ -31,7 +32,8 @@ class Assignment: NSManagedObject {
         self.gradeWeight = gradeWeight
         self.gradeValue = gradeValue
         self.gradeLetter = gradeLetter
-        self.assignmentDescription = assignmentDescription 
+        self.assignmentDescription = assignmentDescription
+        self.gradeScore = gradeScore 
     }
     
 }
