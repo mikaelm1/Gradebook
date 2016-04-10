@@ -137,7 +137,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="MCP-VC-5Na" firstAttribute="leading" secondItem="NUk-3b-W2C" secondAttribute="leadingMargin" id="270-29-wUe"/>
                                                 <constraint firstItem="MCP-VC-5Na" firstAttribute="bottom" secondItem="NUk-3b-W2C" secondAttribute="bottomMargin" id="3X0-c8-ieC"/>
@@ -146,7 +146,6 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="NUk-3b-W2C" firstAttribute="top" secondItem="hWn-cR-2D8" secondAttribute="topMargin" id="BHe-MO-nex"/>
                                         <constraint firstItem="NUk-3b-W2C" firstAttribute="leading" secondItem="hWn-cR-2D8" secondAttribute="leadingMargin" id="YuZ-Lh-MA7"/>
@@ -154,9 +153,10 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="NUk-3b-W2C" secondAttribute="bottom" id="zZl-3S-Usg"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="courseNameLabel" destination="MCP-VC-5Na" id="q6Q-rW-EOZ"/>
+                                    <outlet property="courseView" destination="NUk-3b-W2C" id="gq3-Db-5Lu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

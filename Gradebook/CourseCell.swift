@@ -11,6 +11,13 @@ import UIKit
 class CourseCell: UITableViewCell {
     
     
+    @IBOutlet weak var courseView: UIView!
     @IBOutlet weak var courseNameLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        courseView.layer.cornerRadius = 5.0
+        courseView.clipsToBounds = true 
+    }
     
 }
