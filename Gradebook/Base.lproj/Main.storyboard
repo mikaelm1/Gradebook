@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="height" constant="45" id="Pic-fo-xhC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeD-oP-KNb">
                                 <rect key="frame" x="70" y="280" width="460" height="45"/>
@@ -97,6 +97,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="Hnv-sc-Ay5" id="3bh-QG-zR0"/>
+                        <outlet property="passwordField" destination="K7X-TZ-plE" id="CLP-HY-Grl"/>
                         <segue destination="JrS-Tj-2j3" kind="show" identifier="goToClassesList" id="aXj-iz-w87"/>
                     </connections>
                 </viewController>

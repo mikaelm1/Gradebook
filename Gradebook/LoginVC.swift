@@ -13,18 +13,76 @@ import FBSDKLoginKit
 
 class LoginVC: UIViewController {
     
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    
     let ref = Firebase(url: Constants.FIREBASE_URL)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    
+    func sendAlert(message: String) {
+        let vc = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+        vc.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
+            self.emailField.becomeFirstResponder()
+        }))
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func getEmail() -> String? {
+        if let email = emailField.text where email != "" {
+            return email
+        }
+        return nil
+    }
+    
+    func getPassword() -> String? {
+        if let password = passwordField.text where password != "" {
+            return password
+        }
+        return nil
+    }
 
+    // MARK - Actions
     
     @IBAction func singUpPresed(sender: AnyObject) {
+        if let email = getEmail(), let password = getPassword() {
+            
+            ref.createUser(email, password: password, withValueCompletionBlock: { (error, result) in
+                
+                if error != nil {
+                    if error.code == -9 {
+                        self.sendAlert("An account for this email already exists.")
+                    } else if  error.code == -15 {
+                        self.sendAlert("There is a problem with the Internet connection. Try again later.")
+                    } else {
+                        self.sendAlert("There was a problem creating the account.")
+                    }
+                } else {
+                    let uid = result["uid"]
+                    print("Account succesfully created with uid: \(uid)")
+                    self.performSegueWithIdentifier("goToClassesList", sender: nil)
+                }
+                
+            })
+        } else {
+            sendAlert("Please enter an email and paasword in order to create an account.")
+        }
     }
+    
     @IBAction func signInPressed(sender: AnyObject) {
-        performSegueWithIdentifier("goToClassesList", sender: nil)
+        if let email = getEmail(), let password = getPassword() {
+            ref.authUser(email, password: password, withCompletionBlock: { (error, authData) in
+                
+                if error != nil {
+                    self.sendAlert("There was a problem logging in. Pleas try again")
+                } else {
+                    self.performSegueWithIdentifier("goToClassesList", sender: nil)
+                }
+            })
+        }
         
     }
     
