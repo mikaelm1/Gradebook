@@ -40,8 +40,10 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     func setUpUI() {
         print("Setting up UI")
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(CoursesTableVC.addButtonPressed))
+        addButton.tintColor = UIColor.whiteColor()
         self.navigationItem.rightBarButtonItem = addButton
         self.title = "Courses"
+        
     }
 
     func addButtonPressed() {
