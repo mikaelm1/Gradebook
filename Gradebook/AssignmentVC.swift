@@ -19,7 +19,6 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     
     var course: Course!
     var assignment: Assignment?
-    
     var pickerView: UIPickerView!
     var grades = Grade.GradeLetter.allGrades
     var sharedContext: NSManagedObjectContext {
@@ -51,6 +50,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     func fillInFieldsForAssignment(assignment: Assignment) {
         gradeReceivedField.text = assignment.gradeLetter
         gradeWeightField.text = "\(assignment.gradeWeight)"
+        gradeScoreField.text = "\(assignment.gradeScore)"
         assignmentTitleField.text = assignment.assignmentTitle
         assignmentDescriptionField.text = assignment.assignmentDescription
     }
@@ -59,7 +59,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         gradeReceivedField.delegate = self
         gradeWeightField.delegate = self
         assignmentTitleField.delegate = self
-        print(grades)
+        //print(grades)
     }
     
     func setUpPickers() {

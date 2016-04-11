@@ -242,25 +242,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvb-6u-2KX">
-                                <rect key="frame" x="70" y="114" width="460" height="91"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tvb-6u-2KX">
+                                <rect key="frame" x="70" y="28" width="460" height="100"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="X2U-r0-7HF"/>
                                     <constraint firstAttribute="height" constant="91" id="gAF-Xb-BDS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gAF-Xb-BDS"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23/25" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tQA-JB-VQL">
+                                <rect key="frame" x="70" y="143" width="460" height="100"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ALr-HU-L18"/>
+                                    <constraint firstAttribute="height" constant="91" id="IFU-qx-Qr1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IFU-qx-Qr1"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.29680358019999997" green="0.59545712019999997" blue="0.79643429489999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tvb-6u-2KX" secondAttribute="trailing" constant="50" id="29g-Tv-uQI"/>
+                            <constraint firstItem="tQA-JB-VQL" firstAttribute="top" secondItem="tvb-6u-2KX" secondAttribute="bottom" constant="15" id="8hw-XW-gqW"/>
+                            <constraint firstItem="tvb-6u-2KX" firstAttribute="top" secondItem="0Vn-9Q-4tb" secondAttribute="bottom" constant="8" id="Qvy-5Y-QN7"/>
                             <constraint firstItem="tvb-6u-2KX" firstAttribute="leading" secondItem="v7d-VY-4fR" secondAttribute="leadingMargin" constant="50" id="c7y-ea-p5t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tQA-JB-VQL" secondAttribute="trailing" constant="50" id="kSx-0F-XxQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tvb-6u-2KX" secondAttribute="trailing" constant="50" id="l1p-nS-vVq"/>
                             <constraint firstItem="tvb-6u-2KX" firstAttribute="top" secondItem="0Vn-9Q-4tb" secondAttribute="bottom" constant="94" id="qUt-Ge-OEY"/>
+                            <constraint firstItem="tvb-6u-2KX" firstAttribute="leading" secondItem="v7d-VY-4fR" secondAttribute="leadingMargin" constant="50" id="xId-Gj-KKJ"/>
+                            <constraint firstItem="tQA-JB-VQL" firstAttribute="leading" secondItem="v7d-VY-4fR" secondAttribute="leadingMargin" constant="50" id="xbb-Vb-1dQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="c7y-ea-p5t"/>
+                                <exclude reference="l1p-nS-vVq"/>
+                                <exclude reference="qUt-Ge-OEY"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="testLabel" destination="tvb-6u-2KX" id="ttD-Es-W4H"/>
+                        <outlet property="letterGradeLabel" destination="tvb-6u-2KX" id="2dN-dM-P4u"/>
+                        <outlet property="scoreOutOfTotalLabel" destination="tQA-JB-VQL" id="AS3-e4-KY7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEL-md-DfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -390,7 +427,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Letter Grade Received" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oM9-T2-bnh">
                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="30"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haE-gY-zRo">
@@ -409,7 +446,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujJ-fU-yTh">
                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="30"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUj-bZ-nGu">
@@ -428,7 +465,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgM-Ki-9y4">
                                                 <rect key="frame" x="0.0" y="0.0" width="458.5" height="30"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="85" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kls-Qd-G1a">

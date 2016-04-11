@@ -45,7 +45,7 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     }
 
     func addButtonPressed() {
-        print("Add button pressed")
+        //print("Add button pressed")
         performSegueWithIdentifier("AddClass", sender: nil)
     }
     
@@ -127,6 +127,10 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         tableView.endUpdates()
+    }
+    
+    func configureCell(cell: CourseCell) {
+        
     }
 
 }
