@@ -42,8 +42,17 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(CoursesTableVC.addButtonPressed))
         addButton.tintColor = UIColor.whiteColor()
         self.navigationItem.rightBarButtonItem = addButton
+        
+        let logoutButton = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: #selector(CoursesTableVC.logout))
+        logoutButton.tintColor = UIColor.whiteColor()
+        self.navigationItem.leftBarButtonItem = logoutButton
+        
         self.title = "Courses"
         
+    }
+    
+    func logout() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     func addButtonPressed() {
