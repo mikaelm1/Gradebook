@@ -41,7 +41,7 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
         print("Setting up UI")
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(CoursesTableVC.addButtonPressed))
         self.navigationItem.rightBarButtonItem = addButton
-        self.title = "Classes"
+        self.title = "Courses"
     }
 
     func addButtonPressed() {
@@ -69,12 +69,9 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let course = fetchedResultsController.objectAtIndexPath(indexPath)
+        let course = fetchedResultsController.objectAtIndexPath(indexPath) as! Course
         let cell = tableView.dequeueReusableCellWithIdentifier("CourseCell") as! CourseCell
-        
-        cell.courseNameLabel.text = course.name 
-
-
+        configureCell(cell, course: course)
         return cell
     }
     
@@ -115,9 +112,9 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
             
         case .Update:
-            let cell = tableView.cellForRowAtIndexPath(indexPath!)
-            let course = controller.objectAtIndexPath(indexPath!)
-            // TODO: configure the cell with the new course 
+            let cell = tableView.cellForRowAtIndexPath(indexPath!) as! CourseCell
+            let course = controller.objectAtIndexPath(indexPath!) as! Course
+            configureCell(cell, course: course)
             
         case .Move:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
@@ -129,8 +126,8 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
         tableView.endUpdates()
     }
     
-    func configureCell(cell: CourseCell) {
-        
+    func configureCell(cell: CourseCell, course: Course) {
+        cell.courseNameLabel.text = course.name
     }
 
 }

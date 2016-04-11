@@ -86,6 +86,22 @@ class LoginVC: UIViewController {
         
     }
     
+    @IBAction func udacityLoginPressed(sender: AnyObject) {
+        if let email = getEmail(), let password = getPassword() {
+            UdacityCient.sharedInstance().authenticateUser(email, password: password, completionHandlerForLogin: { (success, error) in
+                
+                if error != nil {
+                    self.sendAlert(error!)
+                } else {
+                    performUpdatesOnMain({ 
+                        self.performSegueWithIdentifier("goToClassesList", sender: nil)
+                    })
+                    
+                }
+            })
+        }
+    }
+    
     @IBAction func facebookLoginPressed(sender: AnyObject) {
         
         let facebookLogin = FBSDKLoginManager()

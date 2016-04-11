@@ -11,6 +11,8 @@ import CoreData
 
 class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDelegate {
     
+    @IBOutlet weak var noAssignmentsView: UIView!
+    
     var course: Course!
     
     var sharedContext: NSManagedObjectContext {
@@ -21,7 +23,6 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
         let fetchRequest = NSFetchRequest(entityName: "Assignment")
         fetchRequest.sortDescriptors = []
         fetchRequest.predicate = NSPredicate(format: "course == %@", self.course)
-        print("FetchRequest; \(fetchRequest)")
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.sharedContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         return fetchedResultsController
@@ -41,6 +42,15 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
         super.viewWillAppear(true)
         setUpUI()
         tableView.reloadData()
+        checkForAssignments()
+    }
+    
+    func checkForAssignments() {
+        if course.assignments?.count == 0 {
+            noAssignmentsView.hidden = false
+        } else {
+            noAssignmentsView.hidden = true
+        }
     }
     
     func setUpUI() {

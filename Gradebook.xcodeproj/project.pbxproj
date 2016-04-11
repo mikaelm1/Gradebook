@@ -25,6 +25,9 @@
 		702EAA6A1CB30E050011EB69 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EAA691CB30E050011EB69 /* CourseCell.swift */; };
 		702EAA6C1CB31B300011EB69 /* CourseDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EAA6B1CB31B300011EB69 /* CourseDetailCell.swift */; };
 		702EAA6E1CB341990011EB69 /* AssignmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EAA6D1CB341990011EB69 /* AssignmentVC.swift */; };
+		704C63431CBC3020005D8314 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C63421CBC3020005D8314 /* CustomButton.swift */; };
+		704C63451CBC33F0005D8314 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C63441CBC33F0005D8314 /* UdacityClient.swift */; };
+		704C63471CBC429C005D8314 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C63461CBC429C005D8314 /* GCDBlackBox.swift */; };
 		708F35A41CB9575B007BA11B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F35A31CB9575B007BA11B /* FBSDKCoreKit.framework */; };
 		708F35A71CB95779007BA11B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F35A51CB95779007BA11B /* FBSDKLoginKit.framework */; };
 		708F35A81CB95779007BA11B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F35A61CB95779007BA11B /* FBSDKShareKit.framework */; };
@@ -77,6 +80,9 @@
 		702EAA691CB30E050011EB69 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		702EAA6B1CB31B300011EB69 /* CourseDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailCell.swift; sourceTree = "<group>"; };
 		702EAA6D1CB341990011EB69 /* AssignmentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentVC.swift; sourceTree = "<group>"; };
+		704C63421CBC3020005D8314 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		704C63441CBC33F0005D8314 /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
+		704C63461CBC429C005D8314 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		708F35A31CB9575B007BA11B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		708F35A51CB95779007BA11B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		708F35A61CB95779007BA11B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -192,6 +198,7 @@
 				700609141CB17E8900EAA791 /* Assignment.swift */,
 				702EAA621CB2CB310011EB69 /* Grade.swift */,
 				702EAA671CB2CD0D0011EB69 /* CoreDataStackManager.swift */,
+				704C63441CBC33F0005D8314 /* UdacityClient.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -201,6 +208,7 @@
 			children = (
 				702EAA691CB30E050011EB69 /* CourseCell.swift */,
 				702EAA6B1CB31B300011EB69 /* CourseDetailCell.swift */,
+				704C63421CBC3020005D8314 /* CustomButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -219,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				708F35AA1CB971C0007BA11B /* Constants.swift */,
+				704C63461CBC429C005D8314 /* GCDBlackBox.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -429,8 +438,10 @@
 				702EAA6C1CB31B300011EB69 /* CourseDetailCell.swift in Sources */,
 				702EAA631CB2CB310011EB69 /* Grade.swift in Sources */,
 				700609151CB17E8900EAA791 /* Assignment.swift in Sources */,
+				704C63431CBC3020005D8314 /* CustomButton.swift in Sources */,
 				702EAA6A1CB30E050011EB69 /* CourseCell.swift in Sources */,
 				702EAA681CB2CD0D0011EB69 /* CoreDataStackManager.swift in Sources */,
+				704C63451CBC33F0005D8314 /* UdacityClient.swift in Sources */,
 				708F35AD1CBABE94007BA11B /* CourseGradeVC.swift in Sources */,
 				700609091CB1634A00EAA791 /* LoginVC.swift in Sources */,
 				702EAA6E1CB341990011EB69 /* AssignmentVC.swift in Sources */,
@@ -439,6 +450,7 @@
 				7006090B1CB166D200EAA791 /* CoursesTableVC.swift in Sources */,
 				708F35AB1CB971C0007BA11B /* Constants.swift in Sources */,
 				7006090F1CB176AA00EAA791 /* AddCourseVC.swift in Sources */,
+				704C63471CBC429C005D8314 /* GCDBlackBox.swift in Sources */,
 				700608DA1CB1611300EAA791 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
