@@ -28,6 +28,8 @@
 		704C63431CBC3020005D8314 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C63421CBC3020005D8314 /* CustomButton.swift */; };
 		704C63451CBC33F0005D8314 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C63441CBC33F0005D8314 /* UdacityClient.swift */; };
 		704C63471CBC429C005D8314 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C63461CBC429C005D8314 /* GCDBlackBox.swift */; };
+		704C634A1CBC4445005D8314 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C63491CBC4445005D8314 /* FirebaseClient.swift */; };
+		704C634C1CBC4C91005D8314 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C634B1CBC4C91005D8314 /* CustomTextField.swift */; };
 		708F35A41CB9575B007BA11B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F35A31CB9575B007BA11B /* FBSDKCoreKit.framework */; };
 		708F35A71CB95779007BA11B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F35A51CB95779007BA11B /* FBSDKLoginKit.framework */; };
 		708F35A81CB95779007BA11B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F35A61CB95779007BA11B /* FBSDKShareKit.framework */; };
@@ -83,6 +85,8 @@
 		704C63421CBC3020005D8314 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		704C63441CBC33F0005D8314 /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		704C63461CBC429C005D8314 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
+		704C63491CBC4445005D8314 /* FirebaseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
+		704C634B1CBC4C91005D8314 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		708F35A31CB9575B007BA11B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		708F35A51CB95779007BA11B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		708F35A61CB95779007BA11B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 		700608D81CB1611300EAA791 /* Gradebook */ = {
 			isa = PBXGroup;
 			children = (
+				704C63481CBC43DC005D8314 /* Data Service */,
 				708F35A91CB971B1007BA11B /* Util */,
 				708F35A21CB95726007BA11B /* Frameworks */,
 				700609111CB17B6F00EAA791 /* View */,
@@ -198,7 +203,6 @@
 				700609141CB17E8900EAA791 /* Assignment.swift */,
 				702EAA621CB2CB310011EB69 /* Grade.swift */,
 				702EAA671CB2CD0D0011EB69 /* CoreDataStackManager.swift */,
-				704C63441CBC33F0005D8314 /* UdacityClient.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -209,8 +213,18 @@
 				702EAA691CB30E050011EB69 /* CourseCell.swift */,
 				702EAA6B1CB31B300011EB69 /* CourseDetailCell.swift */,
 				704C63421CBC3020005D8314 /* CustomButton.swift */,
+				704C634B1CBC4C91005D8314 /* CustomTextField.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		704C63481CBC43DC005D8314 /* Data Service */ = {
+			isa = PBXGroup;
+			children = (
+				704C63441CBC33F0005D8314 /* UdacityClient.swift */,
+				704C63491CBC4445005D8314 /* FirebaseClient.swift */,
+			);
+			name = "Data Service";
 			sourceTree = "<group>";
 		};
 		708F35A21CB95726007BA11B /* Frameworks */ = {
@@ -438,6 +452,8 @@
 				702EAA6C1CB31B300011EB69 /* CourseDetailCell.swift in Sources */,
 				702EAA631CB2CB310011EB69 /* Grade.swift in Sources */,
 				700609151CB17E8900EAA791 /* Assignment.swift in Sources */,
+				704C634C1CBC4C91005D8314 /* CustomTextField.swift in Sources */,
+				704C634A1CBC4445005D8314 /* FirebaseClient.swift in Sources */,
 				704C63431CBC3020005D8314 /* CustomButton.swift in Sources */,
 				702EAA6A1CB30E050011EB69 /* CourseCell.swift in Sources */,
 				702EAA681CB2CD0D0011EB69 /* CoreDataStackManager.swift in Sources */,

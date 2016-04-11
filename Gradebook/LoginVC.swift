@@ -48,6 +48,8 @@ class LoginVC: UIViewController {
     // MARK - Actions
     
     @IBAction func singUpPresed(sender: AnyObject) {
+        
+        let ref = Firebase()
         if let email = getEmail(), let password = getPassword() {
             
             ref.createUser(email, password: password, withValueCompletionBlock: { (error, result) in
@@ -74,12 +76,16 @@ class LoginVC: UIViewController {
     
     @IBAction func signInPressed(sender: AnyObject) {
         if let email = getEmail(), let password = getPassword() {
-            ref.authUser(email, password: password, withCompletionBlock: { (error, authData) in
+            FirebaseClient.sharedInstance().attemptLogin(email, password: password, completionHandler: { (success, error) in
                 
                 if error != nil {
-                    self.sendAlert("There was a problem logging in. Pleas try again")
+                    performUpdatesOnMain({ 
+                        self.sendAlert(error!)
+                    })
                 } else {
-                    self.performSegueWithIdentifier("goToClassesList", sender: nil)
+                    performUpdatesOnMain({ 
+                        self.performSegueWithIdentifier("goToClassesList", sender: nil)
+                    })
                 }
             })
         }

@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@yahoo.com" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hnv-sc-Ay5">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@yahoo.com" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hnv-sc-Ay5" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
                                 <rect key="frame" x="70" y="120" width="460" height="45"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -28,7 +28,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7X-TZ-plE">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7X-TZ-plE" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
                                 <rect key="frame" x="70" y="185" width="460" height="45"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -206,7 +206,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Class Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8n-Jn-3Q5">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Course Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8n-Jn-3Q5" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
                                 <rect key="frame" x="70" y="264" width="460" height="45"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -217,7 +217,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5N-3x-AEj">
                                 <rect key="frame" x="70" y="409" width="460" height="45"/>
-                                <color key="backgroundColor" red="0.066666666669999999" green="0.57254901960000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.29680358019999997" green="0.59545712019999997" blue="0.79643429489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="IAM-Hh-gEA"/>
                                 </constraints>
