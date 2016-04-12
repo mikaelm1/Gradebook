@@ -19,6 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kxN-GX-V7J">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@yahoo.com" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hnv-sc-Ay5" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
                                 <rect key="frame" x="70" y="120" width="460" height="45"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,16 +68,6 @@
                                     <action selector="facebookLoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZIo-rm-REJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEM-Xq-yeZ">
-                                <rect key="frame" x="70" y="238" width="460" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="singUpPresed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Agd-or-ZPt"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTG-yc-zu6" customClass="CustomButton" customModule="Gradebook" customModuleProvider="target">
                                 <rect key="frame" x="70" y="350" width="460" height="45"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.40784313725490196" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,6 +82,16 @@
                                     <action selector="udacityLoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eup-K9-391"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEM-Xq-yeZ">
+                                <rect key="frame" x="70" y="238" width="460" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="singUpPresed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Agd-or-ZPt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -97,6 +100,7 @@
                             <constraint firstItem="K7X-TZ-plE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="9cO-kq-I5N"/>
                             <constraint firstItem="K7X-TZ-plE" firstAttribute="top" secondItem="Hnv-sc-Ay5" secondAttribute="bottom" constant="20" id="CJj-W3-gex"/>
                             <constraint firstItem="XeD-oP-KNb" firstAttribute="top" secondItem="K7X-TZ-plE" secondAttribute="bottom" constant="50" id="D8u-Qg-7W5"/>
+                            <constraint firstItem="kxN-GX-V7J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N8c-Ng-S15"/>
                             <constraint firstAttribute="trailingMargin" secondItem="njj-Yh-xc4" secondAttribute="trailing" constant="50" id="Q9j-PW-vjF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KTG-yc-zu6" secondAttribute="trailing" constant="50" id="SN0-Fp-8hz"/>
                             <constraint firstItem="VEM-Xq-yeZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="UIU-im-G4W"/>
@@ -104,6 +108,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Hnv-sc-Ay5" secondAttribute="trailing" constant="50" id="aJA-Zv-MgP"/>
                             <constraint firstItem="Hnv-sc-Ay5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="ati-1g-Ljb"/>
                             <constraint firstItem="VEM-Xq-yeZ" firstAttribute="top" secondItem="K7X-TZ-plE" secondAttribute="bottom" constant="8" id="ats-Bf-aUn"/>
+                            <constraint firstItem="kxN-GX-V7J" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bdm-m9-BCb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XeD-oP-KNb" secondAttribute="trailing" constant="50" id="bnw-rv-1kt"/>
                             <constraint firstItem="KTG-yc-zu6" firstAttribute="top" secondItem="XeD-oP-KNb" secondAttribute="bottom" constant="25" id="dYs-4y-Hho"/>
                             <constraint firstItem="XeD-oP-KNb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="eBX-cr-Gew"/>
@@ -120,8 +125,13 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="kxN-GX-V7J" id="c4e-W3-79b"/>
                         <outlet property="emailField" destination="Hnv-sc-Ay5" id="3bh-QG-zR0"/>
+                        <outlet property="facebookButton" destination="njj-Yh-xc4" id="WtT-V7-fQB"/>
                         <outlet property="passwordField" destination="K7X-TZ-plE" id="CLP-HY-Grl"/>
+                        <outlet property="signInButton" destination="XeD-oP-KNb" id="XjI-qs-LYS"/>
+                        <outlet property="signUpButton" destination="VEM-Xq-yeZ" id="hrh-xv-3Lj"/>
+                        <outlet property="udacityButton" destination="KTG-yc-zu6" id="l1T-8t-ItV"/>
                         <segue destination="JrS-Tj-2j3" kind="show" identifier="goToClassesList" id="aXj-iz-w87"/>
                     </connections>
                 </viewController>
@@ -215,7 +225,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5N-3x-AEj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5N-3x-AEj" customClass="CustomButton" customModule="Gradebook" customModuleProvider="target">
                                 <rect key="frame" x="70" y="409" width="460" height="45"/>
                                 <color key="backgroundColor" red="0.29680358019999997" green="0.59545712019999997" blue="0.79643429489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -326,7 +336,7 @@
         <scene sceneID="Ddj-I0-K1o">
             <objects>
                 <tableViewController storyboardIdentifier="CourseDetailTableVC" id="wZD-FY-x6U" customClass="CourseDetailTableVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" id="jKj-7I-1I8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="76" sectionHeaderHeight="28" sectionFooterHeight="28" id="jKj-7I-1I8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -353,7 +363,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="u2d-9o-BCj">
-                            <rect key="frame" x="0.0" y="232" width="600" height="95"/>
+                            <rect key="frame" x="0.0" y="202" width="600" height="95"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Haven't Added Any Assignments yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="fZR-a4-D52">
@@ -372,28 +382,28 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailCell" rowHeight="106" id="yXN-yR-yuq" customClass="CourseDetailCell" customModule="Gradebook" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="126" width="600" height="106"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailCell" rowHeight="76" id="yXN-yR-yuq" customClass="CourseDetailCell" customModule="Gradebook" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="126" width="600" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yXN-yR-yuq" id="4UJ-vO-l64">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="106"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alD-fi-eEH">
-                                            <rect key="frame" x="8" y="8" width="584" height="90"/>
+                                            <rect key="frame" x="8" y="8" width="584" height="60"/>
                                             <color key="backgroundColor" red="0.29680358019999997" green="0.59545712019999997" blue="0.79643429489999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="UOy-7t-R1l">
-                                            <rect key="frame" x="16" y="16" width="568" height="74"/>
+                                            <rect key="frame" x="16" y="16" width="568" height="44"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="S5C-Uw-PjN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="462" height="74"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="462" height="44"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A+" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z69-kg-TiK">
-                                                    <rect key="frame" x="462" y="0.0" width="106" height="74"/>
+                                                    <rect key="frame" x="462" y="0.0" width="106" height="44"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -470,7 +480,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haE-gY-zRo">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haE-gY-zRo" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
                                                 <rect key="frame" x="470" y="0.0" width="90" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -489,7 +499,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUj-bZ-nGu">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUj-bZ-nGu" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
                                                 <rect key="frame" x="470" y="0.0" width="90" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -508,7 +518,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="85" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kls-Qd-G1a">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="85" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kls-Qd-G1a" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
                                                 <rect key="frame" x="468.5" y="0.0" width="91.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -518,7 +528,7 @@
                                             <constraint firstItem="RgM-Ki-9y4" firstAttribute="width" secondItem="kls-Qd-G1a" secondAttribute="width" multiplier="5" id="5dE-zF-AVR"/>
                                         </constraints>
                                     </stackView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Assignment Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DrB-gs-Fq1">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Assignment Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DrB-gs-Fq1" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="150" width="560" height="60"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="20"/>
@@ -530,9 +540,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvw-7l-Kcq">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvw-7l-Kcq" customClass="CustomButton" customModule="Gradebook" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="500" width="560" height="50"/>
-                                        <color key="backgroundColor" red="0.066666666669999999" green="0.57254901960000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.29803921570000003" green="0.59607843140000005" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

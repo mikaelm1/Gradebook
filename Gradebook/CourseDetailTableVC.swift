@@ -56,6 +56,7 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
     func setUpUI() {
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(CourseDetailTableVC.addAssignment))
         navigationItem.rightBarButtonItem = addButton
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         title = course.name
     }
     

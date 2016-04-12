@@ -40,12 +40,12 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     func setUpUI() {
         print("Setting up UI")
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(CoursesTableVC.addButtonPressed))
-        addButton.tintColor = UIColor.whiteColor()
         self.navigationItem.rightBarButtonItem = addButton
         
         let logoutButton = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: #selector(CoursesTableVC.logout))
-        logoutButton.tintColor = UIColor.whiteColor()
         self.navigationItem.leftBarButtonItem = logoutButton
+        
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         self.title = "Courses"
         
