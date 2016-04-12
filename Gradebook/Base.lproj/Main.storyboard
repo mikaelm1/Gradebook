@@ -75,7 +75,7 @@
                                     <constraint firstAttribute="height" constant="45" id="igo-Uv-69p"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="Sing In With Udacity">
+                                <state key="normal" title="Sign In With Udacity">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -156,10 +156,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUk-3b-W2C">
-                                            <rect key="frame" x="8" y="8" width="584" height="67"/>
+                                            <rect key="frame" x="8" y="13" width="584" height="57"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Structures" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="MCP-VC-5Na">
-                                                    <rect key="frame" x="8" y="8" width="568" height="51"/>
+                                                    <rect key="frame" x="8" y="8" width="568" height="41"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -175,10 +175,10 @@
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="NUk-3b-W2C" firstAttribute="top" secondItem="hWn-cR-2D8" secondAttribute="topMargin" id="BHe-MO-nex"/>
+                                        <constraint firstItem="NUk-3b-W2C" firstAttribute="top" secondItem="hWn-cR-2D8" secondAttribute="topMargin" constant="5" id="BHe-MO-nex"/>
                                         <constraint firstItem="NUk-3b-W2C" firstAttribute="leading" secondItem="hWn-cR-2D8" secondAttribute="leadingMargin" id="YuZ-Lh-MA7"/>
                                         <constraint firstItem="NUk-3b-W2C" firstAttribute="trailing" secondItem="hWn-cR-2D8" secondAttribute="trailingMargin" id="gT4-qf-Spe"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="NUk-3b-W2C" secondAttribute="bottom" id="zZl-3S-Usg"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="NUk-3b-W2C" secondAttribute="bottom" constant="5" id="zZl-3S-Usg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

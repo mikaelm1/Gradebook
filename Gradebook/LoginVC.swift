@@ -21,8 +21,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     
-    let ref = Firebase(url: Constants.FIREBASE_URL)
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,30 +95,28 @@ class LoginVC: UIViewController {
     // MARK - Actions
     
     @IBAction func singUpPresed(sender: AnyObject) {
+     
         
-        let ref = Firebase()
         if let email = getEmail(), let password = getPassword() {
-            
-            ref.createUser(email, password: password, withValueCompletionBlock: { (error, result) in
+            setUIEnabled(false)
+            FirebaseClient.sharedInstance().createUser(email, password: password, completionHandler: { (success, error) in
                 
                 if error != nil {
-                    if error.code == -9 {
-                        self.sendAlert("An account for this email already exists.")
-                    } else if  error.code == -15 {
-                        self.sendAlert("There is a problem with the Internet connection. Try again later.")
-                    } else {
-                        self.sendAlert("There was a problem creating the account.")
-                    }
+                    performUpdatesOnMain({ 
+                        self.sendAlert(error!)
+                        self.setUIEnabled(true)
+                    })
                 } else {
-                    let uid = result["uid"]
-                    print("Account succesfully created with uid: \(uid)")
-                    self.performSegueWithIdentifier("goToClassesList", sender: nil)
+                    performUpdatesOnMain({ 
+                        self.setUIEnabled(true)
+                        self.performSegueWithIdentifier("goToClassesList", sender: nil)
+                    })
                 }
-                
             })
         } else {
-            sendAlert("Please enter an email and paasword in order to create an account.")
+            sendAlert("Please enter an email and password in order to sign up.")
         }
+        
     }
     
     @IBAction func signInPressed(sender: AnyObject) {
@@ -131,6 +127,7 @@ class LoginVC: UIViewController {
                 if error != nil {
                     performUpdatesOnMain({ 
                         self.sendAlert(error!)
+                        self.setUIEnabled(true)
                     })
                 } else {
                     performUpdatesOnMain({
@@ -162,27 +159,19 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func facebookLoginPressed(sender: AnyObject) {
-        
-        let facebookLogin = FBSDKLoginManager()
-        facebookLogin.logInWithReadPermissions(["email"], fromViewController: self) { (result, error) in
+        setUIEnabled(false)
+        FirebaseClient.sharedInstance().attemptFacebookLogin(self) { (success, error) in
             
             if error != nil {
-                print("Failed to login with Facebbok")
-            } else if result.isCancelled {
-                print("Facebook login was cancelled")
-            } else {
-                let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
-                print("Got Facebook token: \(accessToken)")
-                self.ref.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: { (error, data) in
-                    
-                    if error != nil {
-                        print("Error logging in")
-                    } else {
-                        //print("Got data: \(data)")
-                        self.performSegueWithIdentifier("goToClassesList", sender: nil)
-                    }
-                    
+                performUpdatesOnMain({ 
+                    self.sendAlert(error!)
                 })
+            } else {
+                performUpdatesOnMain({
+                    self.setUIEnabled(true)
+                    self.performSegueWithIdentifier("goToClassesList", sender: nil)
+                })
+                
             }
         }
     }
