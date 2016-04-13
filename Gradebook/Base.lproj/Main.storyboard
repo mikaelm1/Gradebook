@@ -336,34 +336,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="hUD-jD-A3S">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yay-YY-61Y" customClass="CustomButton" customModule="Gradebook" customModuleProvider="target">
-                                    <rect key="frame" x="246" y="31" width="109" height="36"/>
-                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                    <state key="normal" title="View Grade">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="viewGradePressed:" destination="wZD-FY-x6U" eventType="touchUpInside" id="uHe-9w-zuB"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" red="0.29680358019999997" green="0.59545712019999997" blue="0.79643429489999995" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstItem="Yay-YY-61Y" firstAttribute="centerY" secondItem="hUD-jD-A3S" secondAttribute="centerY" id="2SH-LE-tGR"/>
-                                <constraint firstItem="Yay-YY-61Y" firstAttribute="centerX" secondItem="hUD-jD-A3S" secondAttribute="centerX" id="J3R-Uv-t07"/>
-                            </constraints>
-                        </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="u2d-9o-BCj">
-                            <rect key="frame" x="0.0" y="202" width="600" height="95"/>
+                            <rect key="frame" x="0.0" y="104" width="600" height="95"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Haven't Added Any Assignments yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="fZR-a4-D52">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="95"/>
+                                    <rect key="frame" x="10" y="10" width="580" height="75"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -371,15 +349,15 @@
                             </subviews>
                             <color key="backgroundColor" red="0.29803921568627451" green="0.59607843137254901" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="fZR-a4-D52" secondAttribute="trailing" id="Bxd-ZP-F9t"/>
-                                <constraint firstItem="fZR-a4-D52" firstAttribute="top" secondItem="u2d-9o-BCj" secondAttribute="top" id="p45-E8-oqi"/>
-                                <constraint firstItem="fZR-a4-D52" firstAttribute="leading" secondItem="u2d-9o-BCj" secondAttribute="leading" id="tFG-E7-hYY"/>
-                                <constraint firstAttribute="bottom" secondItem="fZR-a4-D52" secondAttribute="bottom" id="z2U-yI-0rf"/>
+                                <constraint firstAttribute="trailing" secondItem="fZR-a4-D52" secondAttribute="trailing" constant="10" id="Bxd-ZP-F9t"/>
+                                <constraint firstItem="fZR-a4-D52" firstAttribute="top" secondItem="u2d-9o-BCj" secondAttribute="top" constant="10" id="p45-E8-oqi"/>
+                                <constraint firstItem="fZR-a4-D52" firstAttribute="leading" secondItem="u2d-9o-BCj" secondAttribute="leading" constant="10" id="tFG-E7-hYY"/>
+                                <constraint firstAttribute="bottom" secondItem="fZR-a4-D52" secondAttribute="bottom" constant="10" id="z2U-yI-0rf"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailCell" rowHeight="76" id="yXN-yR-yuq" customClass="CourseDetailCell" customModule="Gradebook" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="126" width="600" height="76"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yXN-yR-yuq" id="4UJ-vO-l64">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>

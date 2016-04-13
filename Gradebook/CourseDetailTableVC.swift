@@ -51,6 +51,7 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
     }
     
     func checkForAssignments() {
+        noAssignmentsView.backgroundColor = Constants.SPECIAL_BLUE_COLOR
         if course.assignments?.count == 0 {
             noAssignmentsView.hidden = false
         } else {
@@ -63,6 +64,7 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
         navigationItem.rightBarButtonItem = addButton
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         title = course.name
+        
     }
     
     func addAssignment() {

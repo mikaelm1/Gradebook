@@ -102,10 +102,16 @@ class LoginVC: UIViewController {
     }
     
     func goToCoursesFor(student: Student) {
+        eraseTextFields()
         let vc = storyboard?.instantiateViewControllerWithIdentifier("CoursesTableVC") as! CoursesTableVC
         vc.student = student
         let nc = UINavigationController(rootViewController: vc)
         presentViewController(nc, animated: true, completion: nil)
+    }
+    
+    func eraseTextFields() {
+        emailField.text = ""
+        passwordField.text = ""
     }
     
     // MARK - Fetch Request
