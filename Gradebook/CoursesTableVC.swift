@@ -32,7 +32,7 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
         do {
             try fetchedResultsController.performFetch()
         } catch {
-            print("Unable to perform fethc")
+            print("Unable to perform fetch")
         }
         
     }

@@ -30,6 +30,7 @@
 		704C63471CBC429C005D8314 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C63461CBC429C005D8314 /* GCDBlackBox.swift */; };
 		704C634A1CBC4445005D8314 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C63491CBC4445005D8314 /* FirebaseClient.swift */; };
 		704C634C1CBC4C91005D8314 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C634B1CBC4C91005D8314 /* CustomTextField.swift */; };
+		704C63501CBEAC46005D8314 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C634F1CBEAC46005D8314 /* Student.swift */; };
 		708F35A41CB9575B007BA11B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F35A31CB9575B007BA11B /* FBSDKCoreKit.framework */; };
 		708F35A71CB95779007BA11B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F35A51CB95779007BA11B /* FBSDKLoginKit.framework */; };
 		708F35A81CB95779007BA11B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F35A61CB95779007BA11B /* FBSDKShareKit.framework */; };
@@ -87,6 +88,7 @@
 		704C63461CBC429C005D8314 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		704C63491CBC4445005D8314 /* FirebaseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		704C634B1CBC4C91005D8314 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		704C634F1CBEAC46005D8314 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		708F35A31CB9575B007BA11B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		708F35A51CB95779007BA11B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		708F35A61CB95779007BA11B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				700609141CB17E8900EAA791 /* Assignment.swift */,
 				702EAA621CB2CB310011EB69 /* Grade.swift */,
 				702EAA671CB2CD0D0011EB69 /* CoreDataStackManager.swift */,
+				704C634F1CBEAC46005D8314 /* Student.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				708F35AB1CB971C0007BA11B /* Constants.swift in Sources */,
 				7006090F1CB176AA00EAA791 /* AddCourseVC.swift in Sources */,
 				704C63471CBC429C005D8314 /* GCDBlackBox.swift in Sources */,
+				704C63501CBEAC46005D8314 /* Student.swift in Sources */,
 				700608DA1CB1611300EAA791 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

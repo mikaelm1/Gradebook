@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
@@ -30,6 +31,8 @@ class LoginVC: UIViewController {
         super.viewWillAppear(animated)
         setUIEnabled(true)
     }
+    
+    // MARK - UI Methods
     
     func setUIEnabled(enabled: Bool) {
         signUpButton.enabled = enabled
@@ -78,6 +81,8 @@ class LoginVC: UIViewController {
         presentViewController(vc, animated: true, completion: nil)
     }
     
+    // MARK - Helper Methods
+    
     func getEmail() -> String? {
         if let email = emailField.text where email != "" {
             return email
@@ -90,6 +95,27 @@ class LoginVC: UIViewController {
             return password
         }
         return nil
+    }
+    
+    // MARK - Fetch Request
+    
+    func executeFetchForUser(username: String) -> [Student] {
+        let fetchRequest = NSFetchRequest(entityName: "Student")
+        do {
+            return try CoreDataStackManager.sharedInstance().managedObjectContext.executeFetchRequest(fetchRequest) as! [Student]
+        } catch {
+            return [Student]()
+        }
+    }
+    
+    func getStudent(username: String) -> Student? {
+        let students = executeFetchForUser(username)
+        for student in students {
+            if student.username == username {
+                return student
+            }
+        }
+        return nil 
     }
 
     // MARK - Actions

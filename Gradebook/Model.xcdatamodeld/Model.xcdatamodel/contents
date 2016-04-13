@@ -12,9 +12,15 @@
     <entity name="Course" representedClassName=".Course" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="assignments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Assignment" inverseName="course" inverseEntity="Assignment" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="courses" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="Student" syncable="YES">
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="courses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="user" inverseEntity="Course" syncable="YES"/>
     </entity>
     <elements>
         <element name="Assignment" positionX="-54" positionY="-9" width="128" height="150"/>
-        <element name="Course" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Course" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Student" positionX="-63" positionY="45" width="128" height="75"/>
     </elements>
 </model>
