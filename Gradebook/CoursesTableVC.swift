@@ -15,6 +15,8 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }
     
+    var student: Student! 
+    
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let fetchRequest = NSFetchRequest(entityName: "Course")
         fetchRequest.sortDescriptors = []

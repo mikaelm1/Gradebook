@@ -12,36 +12,59 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 typealias CompletionHandler = (success: Bool, error: String?) -> Void
+typealias FBCompletionHandler = (success: Bool, result: [String: AnyObject]?, error: String?) -> Void
 
 class FirebaseClient {
     
     let ref = Firebase(url: Constants.FIREBASE_URL)
     
-    func attemptFacebookLogin(viewController: UIViewController, completionHandler: CompletionHandler) {
+    func attemptFacebookLogin(viewController: UIViewController, completionHandler: FBCompletionHandler) {
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logInWithReadPermissions(["email"], fromViewController: viewController) { (result, error) in
             
             if error != nil {
-                completionHandler(success: false, error: "Failed to login with Facebook")
+                completionHandler(success: false, result: nil, error: "Failed to login with Facebook")
             } else if result.isCancelled {
                 print("Facebook login was cancelled")
-                completionHandler(success: false, error: "Facebook login was cancelled")
+                completionHandler(success: false, result: nil, error: "Facebook login was cancelled")
             } else {
+                
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
-                print("Got Facebook token: \(accessToken)")
+
+                //print("Got Facebook token: \(accessToken)")
                 self.ref.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: { (error, data) in
                     
                     if error != nil {
                         print("Error logging in")
-                        completionHandler(success: false, error: "There was an error logging in")
+                        completionHandler(success: false, result: nil, error: "There was an error logging in")
                     } else {
                         //print("Got data: \(data)")
-                        completionHandler(success: true, error: nil)
+                        self.getUserEmail(accessToken, completionHandler: completionHandler)
                     }
                     
                 })
             }
         }
+    }
+    
+    func getUserEmail(token: String, completionHandler: FBCompletionHandler) {
+        let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email"], tokenString: token, version: nil, HTTPMethod: "GET")
+        graphRequest.startWithCompletionHandler({ (connection, result, error) in
+            
+            if error != nil {
+                print("There was an error getting the user's email")
+                completionHandler(success: false, result: nil, error: "There was an error getting the user's email")
+            } else {
+                
+                guard let result = result as? [String: AnyObject] else {
+                    completionHandler(success: false, result: nil, error: "Error parsing Facebook's result")
+                    return 
+                }
+                print("FACEBOOK GRAPH RESULT: \(result)")
+                completionHandler(success: true, result: result, error: nil)
+            }
+            
+        })
     }
     
     func attemptLogin(email: String, password: String, completionHandler: CompletionHandler) {

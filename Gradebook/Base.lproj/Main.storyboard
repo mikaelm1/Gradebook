@@ -142,7 +142,7 @@
         <!--Courses TableVC-->
         <scene sceneID="BnL-n2-1Md">
             <objects>
-                <tableViewController id="2Rj-n6-rAm" customClass="CoursesTableVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CoursesTableVC" id="2Rj-n6-rAm" customClass="CoursesTableVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" id="h9b-BD-edE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

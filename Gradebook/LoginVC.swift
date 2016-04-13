@@ -22,6 +22,10 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     
+    var sharedContext: NSManagedObjectContext {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,6 +101,13 @@ class LoginVC: UIViewController {
         return nil
     }
     
+    func goToCoursesFor(student: Student) {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("CoursesTableVC") as! CoursesTableVC
+        vc.student = student
+        let nc = UINavigationController(rootViewController: vc)
+        presentViewController(nc, animated: true, completion: nil)
+    }
+    
     // MARK - Fetch Request
     
     func executeFetchForUser(username: String) -> [Student] {
@@ -108,14 +119,24 @@ class LoginVC: UIViewController {
         }
     }
     
-    func getStudent(username: String) -> Student? {
+    func getStudent(username: String) -> Student {
         let students = executeFetchForUser(username)
-        for student in students {
-            if student.username == username {
-                return student
+        print("Count of Students: \(students.count)")
+        
+        if students.count >= 0 {
+            for student in students {
+                if student.username == username {
+                    return student
+                }
             }
         }
-        return nil 
+        return createStudent(username)
+    }
+    
+    func createStudent(username: String) -> Student {
+        let student = Student(username: username, context: sharedContext, courses: nil)
+        CoreDataStackManager.sharedInstance().saveContext()
+        return student
     }
 
     // MARK - Actions
@@ -135,7 +156,8 @@ class LoginVC: UIViewController {
                 } else {
                     performUpdatesOnMain({ 
                         self.setUIEnabled(true)
-                        self.performSegueWithIdentifier("goToClassesList", sender: nil)
+                        let student = self.getStudent(email)
+                        self.goToCoursesFor(student)
                     })
                 }
             })
@@ -158,7 +180,9 @@ class LoginVC: UIViewController {
                 } else {
                     performUpdatesOnMain({
                         self.setUIEnabled(true)
-                        self.performSegueWithIdentifier("goToClassesList", sender: nil)
+                        // TODO Fix this!!! Only here for testing!!!
+                        let student = self.getStudent(email)
+                        self.goToCoursesFor(student)
                     })
                 }
             })
@@ -175,8 +199,10 @@ class LoginVC: UIViewController {
                         self.sendAlert(error!)
                     })
                 } else {
-                    performUpdatesOnMain({ 
-                        self.performSegueWithIdentifier("goToClassesList", sender: nil)
+                    performUpdatesOnMain({
+                        self.setUIEnabled(true)
+                        let student = self.getStudent(email)
+                        self.goToCoursesFor(student)
                     })
                     
                 }
@@ -186,16 +212,19 @@ class LoginVC: UIViewController {
     
     @IBAction func facebookLoginPressed(sender: AnyObject) {
         setUIEnabled(false)
-        FirebaseClient.sharedInstance().attemptFacebookLogin(self) { (success, error) in
+        
+        FirebaseClient.sharedInstance().attemptFacebookLogin(self) { (success, result, error) in
             
             if error != nil {
                 performUpdatesOnMain({ 
                     self.sendAlert(error!)
                 })
             } else {
+                let email = result!["email"] as! String
                 performUpdatesOnMain({
                     self.setUIEnabled(true)
-                    self.performSegueWithIdentifier("goToClassesList", sender: nil)
+                    let student = self.getStudent(email)
+                    self.goToCoursesFor(student)
                 })
                 
             }
