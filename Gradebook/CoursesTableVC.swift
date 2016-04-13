@@ -31,6 +31,7 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
         super.viewDidLoad()
 
         setUpUI()
+        setUpToolbar()
         
         do {
             try fetchedResultsController.performFetch()
@@ -49,9 +50,16 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
         self.navigationItem.leftBarButtonItem = logoutButton
         
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        tabBarController?.tabBar.tintColor = UIColor.whiteColor()
         
         self.title = "Courses"
         
+    }
+    
+    func setUpToolbar() {
+        navigationController?.setToolbarHidden(false, animated: true)
+        navigationController?.toolbar?.barTintColor = Constants.SPECIAL_BLUE_COLOR
+        navigationController?.toolbar.tintColor = UIColor.whiteColor()
     }
     
     func logout() {

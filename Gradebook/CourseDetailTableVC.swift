@@ -36,6 +36,7 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
         } catch {
             print("Unable to fetch Assignment")
         }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -43,6 +44,10 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
         setUpUI()
         tableView.reloadData()
         checkForAssignments()
+    }
+    
+    func showGrade() {
+        
     }
     
     func checkForAssignments() {

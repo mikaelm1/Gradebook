@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearance.tintColor = Constants.SPECIAL_BLUE_COLOR
         navigationBarAppearance.barTintColor = Constants.SPECIAL_BLUE_COLOR
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
