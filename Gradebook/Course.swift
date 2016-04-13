@@ -27,6 +27,7 @@ class Course: NSManagedObject {
     }
     
     @NSManaged var name: String
+    @NSManaged var student: Student 
     @NSManaged var assignments: NSSet?
     
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {

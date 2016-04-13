@@ -219,14 +219,16 @@ class LoginVC: UIViewController {
                 performUpdatesOnMain({ 
                     self.sendAlert(error!)
                 })
-            } else {
+            } else if success {
                 let email = result!["email"] as! String
+                print("Email: \(email)")
                 performUpdatesOnMain({
                     self.setUIEnabled(true)
                     let student = self.getStudent(email)
                     self.goToCoursesFor(student)
                 })
-                
+            } else {
+                print("Something weird has happened")
             }
         }
     }

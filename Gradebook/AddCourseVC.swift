@@ -13,6 +13,8 @@ class AddCourseVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var courseNameField: UITextField!
     
+    var student: Student!
+    
     var sharedContext: NSManagedObjectContext {
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }
@@ -49,8 +51,8 @@ class AddCourseVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveButtonPressed(sender: AnyObject) {
         let courseName = courseNameField.text
-        _ = Course(name: courseName!, context: sharedContext, assignments: nil)
-        
+        let course = Course(name: courseName!, context: sharedContext, assignments: nil)
+        course.student = student 
         CoreDataStackManager.sharedInstance().saveContext()
         
         navigationController?.popViewControllerAnimated(true)

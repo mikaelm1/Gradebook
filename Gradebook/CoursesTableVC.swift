@@ -20,6 +20,7 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let fetchRequest = NSFetchRequest(entityName: "Course")
         fetchRequest.sortDescriptors = []
+        fetchRequest.predicate = NSPredicate(format: "student == %@", self.student)
         //print("FetchRequest; \(fetchRequest)")
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.sharedContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
@@ -58,16 +59,11 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     }
 
     func addButtonPressed() {
-        //print("Add button pressed")
-        performSegueWithIdentifier("AddClass", sender: nil)
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("AddCourseVC") as! AddCourseVC
+        vc.student = student
+        navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showCourseDetail" {
-            print("Prepared for segueue")
-        }
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

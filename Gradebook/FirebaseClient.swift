@@ -73,7 +73,7 @@ class FirebaseClient {
             
             if error != nil {
                 print("Error for Firebase login: \(error)")
-                completionHandler(success: false, error: "There was a problem logging in.")
+                completionHandler(success: false, error: "\(error.localizedDescription)")
             } else {
                 completionHandler(success: true, error: nil)
             }

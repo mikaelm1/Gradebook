@@ -132,7 +132,6 @@
                         <outlet property="signInButton" destination="XeD-oP-KNb" id="XjI-qs-LYS"/>
                         <outlet property="signUpButton" destination="VEM-Xq-yeZ" id="hrh-xv-3Lj"/>
                         <outlet property="udacityButton" destination="KTG-yc-zu6" id="l1T-8t-ItV"/>
-                        <segue destination="JrS-Tj-2j3" kind="show" identifier="goToClassesList" id="aXj-iz-w87"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -196,9 +195,6 @@
                     <navigationItem key="navigationItem" id="TpA-eK-U5Q">
                         <barButtonItem key="rightBarButtonItem" id="jDq-wF-FUP"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="QgH-8a-zPe" kind="show" identifier="AddClass" id="JRd-ET-QFw"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAi-II-BP4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -207,7 +203,7 @@
         <!--Add CourseVC-->
         <scene sceneID="WCh-jQ-9Tt">
             <objects>
-                <viewController id="QgH-8a-zPe" customClass="AddCourseVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCourseVC" id="QgH-8a-zPe" customClass="AddCourseVC" customModule="Gradebook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jEf-f4-RYw"/>
                         <viewControllerLayoutGuide type="bottom" id="fPr-Tw-x69"/>
