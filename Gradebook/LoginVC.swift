@@ -34,6 +34,7 @@ class LoginVC: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setUIEnabled(true)
+        emailField.becomeFirstResponder()
     }
     
     // MARK - UI Methods

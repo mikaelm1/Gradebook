@@ -28,6 +28,12 @@ class AddCourseVC: UIViewController, UITextFieldDelegate {
         self.navigationItem.rightBarButtonItem = saveButton
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        courseNameField.becomeFirstResponder()
+    }
+    
     func cancelButtonPressed() {
         navigationController?.popViewControllerAnimated(true)
     }
