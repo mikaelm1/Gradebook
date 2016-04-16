@@ -11,7 +11,9 @@ import UIKit
 class CourseGradeVC: UIViewController {
 
     @IBOutlet weak var letterGradeLabel: UILabel!
-    @IBOutlet weak var scoreOutOfTotalLabel: UILabel!
+    @IBOutlet weak var pointsEarnedLabel: UILabel!
+    @IBOutlet weak var totalPossiblePointsLabel: UILabel!
+    @IBOutlet weak var percentageCompleted: UILabel! 
     
     var course: Course!
     
@@ -21,12 +23,15 @@ class CourseGradeVC: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         let grade = calculateGrade()
-        letterGradeLabel.text = "\(grade.0)"
-        scoreOutOfTotalLabel.text = "\(grade.1)"
+        letterGradeLabel.text = "Grade: \(grade.0)"
+        pointsEarnedLabel.text = "Points Earned: \(grade.1)"
+        totalPossiblePointsLabel.text = "Total Possible Points: \(grade.2)"
+        percentageCompleted.text = "Percent of course completed: \(grade.2)%"
     }
     
-    func calculateGrade() -> (String, Double) {
+    func calculateGrade() -> (String, Int, Int) {
         let assignments = getAssignments()
         var score: Double = 0
         var total: Double = 0
@@ -34,11 +39,21 @@ class CourseGradeVC: UIViewController {
             score += (i.gradeScore * i.gradeWeight)
             total += i.gradeWeight
         }
+        let points = calculatePointsEarned(assignments)
         score = (score / total)
         print("Score: \(score)")
         let grade = gradeLetterFromScore(score)
 
-        return (grade, total)
+        return (grade, points, Int(total))
+    }
+    
+    func calculatePointsEarned(assignments: [Assignment]) -> Int {
+        var points: Double = 0
+        for i in assignments {
+            let assignmentPoints = (i.gradeScore/100) * i.gradeWeight
+            points += assignmentPoints
+        }
+        return Int(points)
     }
     
     func getAssignments() -> [Assignment] {

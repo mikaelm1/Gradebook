@@ -27,7 +27,7 @@ class UdacityCient {
             }
             
             guard error == nil else {
-                sendError("\(error?.localizedDescription)")
+                sendError("\(error!.localizedDescription)")
                 return
             }
             
@@ -43,7 +43,6 @@ class UdacityCient {
                 sendError("Unable to parse the JSON")
                 return
             }
-            
             guard let confirmation = parsedResult["account"] as? [String: AnyObject] else {
                 sendError("Not registered")
                 return

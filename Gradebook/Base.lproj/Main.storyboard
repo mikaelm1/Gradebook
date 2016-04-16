@@ -212,7 +212,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Course Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8n-Jn-3Q5" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Course Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8n-Jn-3Q5" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
                                 <rect key="frame" x="70" y="264" width="460" height="45"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -221,7 +221,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5N-3x-AEj" customClass="CustomButton" customModule="Gradebook" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5N-3x-AEj" customClass="CustomButton" customModule="Gradebook" customModuleProvider="target">
                                 <rect key="frame" x="70" y="409" width="460" height="45"/>
                                 <color key="backgroundColor" red="0.29680358019999997" green="0.59545712019999997" blue="0.79643429489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -266,7 +266,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Grade: B" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tvb-6u-2KX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Grade: B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tvb-6u-2KX">
                                 <rect key="frame" x="70" y="70" width="460" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="X2U-r0-7HF"/>
@@ -281,10 +281,10 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points Earned: 23" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tQA-JB-VQL">
-                                <rect key="frame" x="70" y="185" width="460" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points Earned: 23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tQA-JB-VQL">
+                                <rect key="frame" x="70" y="185" width="460" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="ALr-HU-L18"/>
+                                    <constraint firstAttribute="height" constant="50" id="ALr-HU-L18"/>
                                     <constraint firstAttribute="height" constant="91" id="IFU-qx-Qr1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
@@ -296,11 +296,11 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Possible Points: 25" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="yAk-Iq-jWt">
-                                <rect key="frame" x="70" y="300" width="460" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Possible Points: 25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="yAk-Iq-jWt">
+                                <rect key="frame" x="70" y="250" width="460" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="53b-4n-9CR"/>
-                                    <constraint firstAttribute="height" constant="100" id="BQq-0B-M9A"/>
+                                    <constraint firstAttribute="height" constant="50" id="BQq-0B-M9A"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -311,10 +311,10 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Percentage of Course Completed: 60%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KwT-De-gsg">
-                                <rect key="frame" x="21" y="415" width="558" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage of Course Completed: 60%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KwT-De-gsg">
+                                <rect key="frame" x="70" y="315" width="460" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="VE4-Ng-c94"/>
+                                    <constraint firstAttribute="height" constant="50" id="VE4-Ng-c94"/>
                                     <constraint firstAttribute="height" constant="91" id="igO-sP-dVJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
@@ -355,7 +355,9 @@
                     </view>
                     <connections>
                         <outlet property="letterGradeLabel" destination="tvb-6u-2KX" id="2dN-dM-P4u"/>
-                        <outlet property="scoreOutOfTotalLabel" destination="tQA-JB-VQL" id="AS3-e4-KY7"/>
+                        <outlet property="percentageCompleted" destination="KwT-De-gsg" id="18M-3o-5yi"/>
+                        <outlet property="pointsEarnedLabel" destination="tQA-JB-VQL" id="jRc-3N-nnQ"/>
+                        <outlet property="totalPossiblePointsLabel" destination="yAk-Iq-jWt" id="JK8-Wh-L0C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEL-md-DfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -509,13 +511,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-kR-wiC">
                                         <rect key="frame" x="0.0" y="50" width="560" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujJ-fU-yTh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percent Earned" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujJ-fU-yTh">
                                                 <rect key="frame" x="0.0" y="0.0" width="450" height="30"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUj-bZ-nGu" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="78" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUj-bZ-nGu" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
                                                 <rect key="frame" x="470" y="0.0" width="90" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -528,7 +530,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MeI-hI-W37">
                                         <rect key="frame" x="0.0" y="100" width="560" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgM-Ki-9y4">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade Weight for Course" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgM-Ki-9y4">
                                                 <rect key="frame" x="0.0" y="0.0" width="458.5" height="30"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
