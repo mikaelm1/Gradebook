@@ -9,6 +9,10 @@ A user can login with either their Facebook account, Udacity account, or create 
 
 New courses can be entered by pressing the "+" button in the upper right corner of the "Courses" page and clicking on a course will navigate the user to a page listing the assignments associated with that course. Assignments can be added the same way courses are added, by pressing the "+" button in the upper right corner. Once a course has at least one assignment, the user can see the total grade and other information about the course by clicking on the "See Grade" button on the tool bar at the bottom. 
 
+## Upcoming Features
+- [ ] Allow users to share achievements through Facebook
+- [ ] Calculate required grade on remaining assignments to get desired grade in course
+
 ## Attributions 
 The icon used for the app was created by Lil Squid from Noun Project 
 
