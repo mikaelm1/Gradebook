@@ -46,10 +46,6 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
         checkForAssignments()
     }
     
-    func showGrade() {
-        
-    }
-    
     func checkForAssignments() {
         noAssignmentsView.backgroundColor = Constants.SPECIAL_BLUE_COLOR
         if course.assignments?.count == 0 {
@@ -69,8 +65,9 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
     
     func addAssignment() {
         let vc = storyboard?.instantiateViewControllerWithIdentifier("AssignmentVC") as! AssignmentVC
-        vc.course = course 
+        vc.course = course
         navigationController?.pushViewController(vc, animated: true)
+       
     }
 
     // MARK: - Table view data source
@@ -153,9 +150,16 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
     }
 
     @IBAction func viewGradePressed(sender: AnyObject) {
-        let vc = storyboard?.instantiateViewControllerWithIdentifier("CourseGradeVC") as! CourseGradeVC
-        vc.course = course
-        navigationController?.pushViewController(vc, animated: true)
+        if course.assignments?.count != 0 {
+            let vc = storyboard?.instantiateViewControllerWithIdentifier("CourseGradeVC") as! CourseGradeVC
+            vc.course = course
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let ac = UIAlertController(title: "No Assignments", message: "Please add an assignment in order to calculate yur grade.", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+        }
+        
     }
 
 }
