@@ -200,7 +200,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 } else {
                     performUpdatesOnMain({
                         self.setUIEnabled(true)
-                        // TODO Fix this!!! Only here for testing!!!
                         let student = self.getStudent(email)
                         self.goToCoursesFor(student)
                     })
@@ -248,7 +247,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 })
             } else if success {
                 let email = result!["email"] as! String
-                print("Email: \(email)")
                 performUpdatesOnMain({
                     self.setUIEnabled(true)
                     let student = self.getStudent(email)
@@ -280,14 +278,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        print("Keyboard will Show")
         topConstraint.constant = 10
-        print("View Y: \(topConstraint.constant)")
         
     }
     
     func keyboardWillHide() {
-        print("Keyboard will Hide")
         topConstraint.constant = 100
     }
     
