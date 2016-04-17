@@ -131,6 +131,7 @@
                         <outlet property="passwordField" destination="K7X-TZ-plE" id="CLP-HY-Grl"/>
                         <outlet property="signInButton" destination="XeD-oP-KNb" id="XjI-qs-LYS"/>
                         <outlet property="signUpButton" destination="VEM-Xq-yeZ" id="hrh-xv-3Lj"/>
+                        <outlet property="topConstraint" destination="XXz-It-bzz" id="qnz-E5-mV5"/>
                         <outlet property="udacityButton" destination="KTG-yc-zu6" id="l1T-8t-ItV"/>
                     </connections>
                 </viewController>

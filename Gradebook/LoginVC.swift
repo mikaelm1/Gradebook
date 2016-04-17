@@ -14,6 +14,7 @@ import FBSDKLoginKit
 
 class LoginVC: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var facebookButton: CustomButton!
     @IBOutlet weak var udacityButton: CustomButton!
@@ -263,7 +264,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        return true 
+        return true
     }
     
     // MARK: Keyboard methods
@@ -279,17 +280,15 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        if emailField.isFirstResponder() {
-            emailField.frame.origin.y = getKeyboardHeight(notification) * -1
-            //view.frame.origin.y = getKeyboardHeight(notification) * -1
-        }
-        
-        print("View Y: \(view.frame.origin.y)")
+        print("Keyboard will Show")
+        topConstraint.constant = 10
+        print("View Y: \(topConstraint.constant)")
         
     }
     
     func keyboardWillHide() {
-        view.frame.origin.y = 0
+        print("Keyboard will Hide")
+        topConstraint.constant = 100
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
