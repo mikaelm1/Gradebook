@@ -12,7 +12,7 @@ import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var facebookButton: CustomButton!
@@ -29,15 +29,23 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailField.delegate = self
+        passwordField.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setUIEnabled(true)
-        emailField.becomeFirstResponder()
+        subscribeToKeyboardNotifications()
+        //emailField.becomeFirstResponder()
     }
     
-    // MARK - UI Methods
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+    
+    }
+    
+    // MARK: - UI Methods
     
     func setUIEnabled(enabled: Bool) {
         signUpButton.enabled = enabled
@@ -86,7 +94,7 @@ class LoginVC: UIViewController {
         presentViewController(vc, animated: true, completion: nil)
     }
     
-    // MARK - Helper Methods
+    // MARK: - Helper Methods
     
     func getEmail() -> String? {
         if let email = emailField.text where email != "" {
@@ -115,7 +123,11 @@ class LoginVC: UIViewController {
         passwordField.text = ""
     }
     
-    // MARK - Fetch Request
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    // MARK: - Fetch Request
     
     func executeFetchForUser(username: String) -> [Student] {
         let fetchRequest = NSFetchRequest(entityName: "Student")
@@ -146,7 +158,7 @@ class LoginVC: UIViewController {
         return student
     }
 
-    // MARK - Actions
+    // MARK: - Actions
     
     @IBAction func singUpPresed(sender: AnyObject) {
      
@@ -193,11 +205,15 @@ class LoginVC: UIViewController {
                     })
                 }
             })
+        } else {
+            setUIEnabled(true)
+            sendAlert("Please enter an email and password to sign in.")
         }
         
     }
     
     @IBAction func udacityLoginPressed(sender: AnyObject) {
+        setUIEnabled(false)
         if let email = getEmail(), let password = getPassword() {
             UdacityCient.sharedInstance().authenticateUser(email, password: password, completionHandlerForLogin: { (success, error) in
                 
@@ -214,6 +230,9 @@ class LoginVC: UIViewController {
                     
                 }
             })
+        } else {
+            setUIEnabled(true)
+            sendAlert("Please enter an email and password to sign in.")
         }
     }
     
@@ -239,5 +258,49 @@ class LoginVC: UIViewController {
             }
         }
     }
+    
+    // MARK: TextField Delegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true 
+    }
+    
+    // MARK: Keyboard methods
+    
+    func subscribeToKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginVC.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginVC.keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if emailField.isFirstResponder() {
+            emailField.frame.origin.y = getKeyboardHeight(notification) * -1
+            //view.frame.origin.y = getKeyboardHeight(notification) * -1
+        }
+        
+        print("View Y: \(view.frame.origin.y)")
+        
+    }
+    
+    func keyboardWillHide() {
+        view.frame.origin.y = 0
+    }
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        //print("User Info: \(userInfo)")
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        return keyboardSize.CGRectValue().height
+    }
 
 }
+
+
+
+

@@ -45,7 +45,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         view.endEditing(true)
     }
     
-    // MARK - Helper methods
+    // MARK: - Helper methods
     
     func fillInFieldsForAssignment(assignment: Assignment) {
         gradeReceivedField.text = assignment.gradeLetter
@@ -108,7 +108,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    // MARK - Picker View Delegate
+    // MARK: - Picker View Delegate
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -126,7 +126,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         gradeReceivedField.text = grades[row].rawValue
     }
     
-    // MARK - Text Field Delegate 
+    // MARK: - Text Field Delegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -138,7 +138,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         return true
     }
 
-    // MARK - Actions
+    // MARK: - Actions
     
     @IBAction func saveButtonPressed(sender: AnyObject) {
         
