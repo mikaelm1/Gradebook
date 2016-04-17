@@ -13,3 +13,10 @@ New courses can be entered by pressing the "+" button in the upper right corner 
 - [ ] If no assignments, don't show grade
 - [ ] On login page, resign first responder if screen tapped
 - [ ] Create new view controller for sign up
+
+## Attributions 
+The icon used for the app was created by Lil Squid from Noun Project 
+
+## Licensing 
+The contents of this repository is licensed under [The MIT License](https://opensource.org/licenses/MIT)
+
