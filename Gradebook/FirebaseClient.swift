@@ -31,14 +31,12 @@ class FirebaseClient {
                 
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
 
-                //print("Got Facebook token: \(accessToken)")
                 self.ref.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: { (error, data) in
                     
                     if error != nil {
                         print("Error logging in")
                         completionHandler(success: false, result: nil, error: "There was an error logging in")
                     } else {
-                        //print("Got data: \(data)")
                         self.getUserEmail(accessToken, completionHandler: completionHandler)
                     }
                     

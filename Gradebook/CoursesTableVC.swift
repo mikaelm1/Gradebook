@@ -21,7 +21,6 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
         let fetchRequest = NSFetchRequest(entityName: "Course")
         fetchRequest.sortDescriptors = []
         fetchRequest.predicate = NSPredicate(format: "student == %@", self.student)
-        //print("FetchRequest; \(fetchRequest)")
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.sharedContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         return fetchedResultsController
@@ -42,7 +41,6 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     }
     
     func setUpUI() {
-        print("Setting up UI")
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(CoursesTableVC.addButtonPressed))
         self.navigationItem.rightBarButtonItem = addButton
         
@@ -93,7 +91,6 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //print("Selected cell at index \(indexPath)")
         let course = fetchedResultsController.objectAtIndexPath(indexPath) as! Course
         let vc = storyboard?.instantiateViewControllerWithIdentifier("CourseDetailTableVC") as! CourseDetailTableVC
         vc.course = course

@@ -83,7 +83,6 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let assignment = fetchedResultsController.objectAtIndexPath(indexPath) as! Assignment
-        print("Assignment: \(assignment)")
         let cell = tableView.dequeueReusableCellWithIdentifier("ClassDetailCell", forIndexPath: indexPath) as! CourseDetailCell 
         configureCell(cell, assignment: assignment)
         
@@ -91,7 +90,6 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("Selected cell at row \(indexPath.row)")
         
         let assignment = fetchedResultsController.objectAtIndexPath(indexPath) as! Assignment
         let vc = storyboard?.instantiateViewControllerWithIdentifier("AssignmentVC") as! AssignmentVC

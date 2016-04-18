@@ -40,7 +40,6 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         super.viewWillAppear(true)
         
         if assignment != nil {
-            print("The assignment is not nil")
             fillInFieldsForAssignment(assignment!)
         }
     }
@@ -91,7 +90,6 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerDoneButtonPressed() {
-        print("\(pickerView.selectedRowInComponent(0))")
         let selectedItem = pickerView.selectedRowInComponent(0)
         if selectedItem == 0 {
             gradeReceivedField.text = grades[selectedItem].rawValue
@@ -175,8 +173,6 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         
         var assignmentDesc = "No description entered."
         
-        print("Save button pressed")
-        
         guard let grade = gradeReceivedField.text where grade != "" else {
             sendAlert("Please enter a grade.", fieldNeeded: gradeReceivedField)
             return
@@ -221,11 +217,7 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     
     func getGrade(letter: String) -> Double {
         let selectedGradeIndex = pickerView.selectedRowInComponent(0)
-        print("Selected grade: \(selectedGradeIndex)")
-        
         let grade = grades[selectedGradeIndex].getGradeValue()
-        print("Grade Value: \(grade)")
-        
         return grade
     }
 

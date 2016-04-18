@@ -213,8 +213,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Course Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8n-Jn-3Q5" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
-                                <rect key="frame" x="70" y="264" width="460" height="45"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Course Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8n-Jn-3Q5" customClass="CustomTextField" customModule="Gradebook" customModuleProvider="target">
+                                <rect key="frame" x="70" y="220" width="460" height="45"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="HsR-vN-U7f"/>
@@ -222,8 +222,8 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5N-3x-AEj" customClass="CustomButton" customModule="Gradebook" customModuleProvider="target">
-                                <rect key="frame" x="70" y="409" width="460" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5N-3x-AEj" customClass="CustomButton" customModule="Gradebook" customModuleProvider="target">
+                                <rect key="frame" x="70" y="365" width="460" height="45"/>
                                 <color key="backgroundColor" red="0.29680358019999997" green="0.59545712019999997" blue="0.79643429489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="IAM-Hh-gEA"/>
@@ -249,6 +249,7 @@
                     </view>
                     <connections>
                         <outlet property="courseNameField" destination="m8n-Jn-3Q5" id="pOM-Mg-fua"/>
+                        <outlet property="topConstraint" destination="kob-j3-yE3" id="guw-ZZ-epJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbj-Q0-gzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
