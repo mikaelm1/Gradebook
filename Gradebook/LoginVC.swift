@@ -169,9 +169,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             FirebaseClient.sharedInstance().createUser(email, password: password, completionHandler: { (success, error) in
                 
                 if error != nil {
-                    performUpdatesOnMain({ 
-                        self.sendAlert(error!)
+                    performUpdatesOnMain({
                         self.setUIEnabled(true)
+                        self.sendAlert(error!)
                     })
                 } else {
                     performUpdatesOnMain({ 
@@ -193,9 +193,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             FirebaseClient.sharedInstance().attemptLogin(email, password: password, completionHandler: { (success, error) in
                 
                 if error != nil {
-                    performUpdatesOnMain({ 
-                        self.sendAlert(error!)
+                    performUpdatesOnMain({
                         self.setUIEnabled(true)
+                        self.sendAlert(error!)
                     })
                 } else {
                     performUpdatesOnMain({
@@ -218,7 +218,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             UdacityCient.sharedInstance().authenticateUser(email, password: password, completionHandlerForLogin: { (success, error) in
                 
                 if error != nil {
-                    performUpdatesOnMain({ 
+                    performUpdatesOnMain({
+                        self.setUIEnabled(true)
                         self.sendAlert(error!)
                     })
                 } else {
@@ -242,7 +243,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         FirebaseClient.sharedInstance().attemptFacebookLogin(self) { (success, result, error) in
             
             if error != nil {
-                performUpdatesOnMain({ 
+                performUpdatesOnMain({
+                    self.setUIEnabled(true)
                     self.sendAlert(error!)
                 })
             } else if success {
@@ -253,6 +255,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     self.goToCoursesFor(student)
                 })
             } else {
+                self.setUIEnabled(true)
                 print("Something weird has happened")
             }
         }
@@ -286,12 +289,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         topConstraint.constant = 100
     }
     
-    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
-        let userInfo = notification.userInfo
-        //print("User Info: \(userInfo)")
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
-        return keyboardSize.CGRectValue().height
-    }
 
 }
 
