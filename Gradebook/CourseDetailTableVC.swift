@@ -153,7 +153,7 @@ class CourseDetailTableVC: UITableViewController, NSFetchedResultsControllerDele
             vc.course = course
             navigationController?.pushViewController(vc, animated: true)
         } else {
-            let ac = UIAlertController(title: "No Assignments", message: "Please add an assignment in order to calculate yur grade.", preferredStyle: .Alert)
+            let ac = UIAlertController(title: "No Assignments", message: "Please add an assignment in order to calculate your grade.", preferredStyle: .Alert)
             ac.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             presentViewController(ac, animated: true, completion: nil)
         }

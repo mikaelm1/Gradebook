@@ -29,21 +29,25 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         emailField.delegate = self
         passwordField.delegate = self
+        //getLastLoggedIn()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setUIEnabled(true)
         subscribeToKeyboardNotifications()
-        //emailField.becomeFirstResponder()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
     
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        getLastLoggedIn()
     }
     
     // MARK: - UI Methods
@@ -97,6 +101,21 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     // MARK: - Helper Methods
     
+    func saveUserLogin(email: String) {
+        NSUserDefaults.standardUserDefaults().setObject(email, forKey: Constants.LAST_LOGGED_IN)
+        print("Saved user email")
+    }
+    
+    func getLastLoggedIn() {
+        print("Inside getLastLoggedIn")
+        if let email = NSUserDefaults.standardUserDefaults().objectForKey(Constants.LAST_LOGGED_IN) as? String {
+            print("Last email: \(email)")
+            let student = getStudent(email)
+            print("Student: \(student.username)")
+            goToCoursesFor(student)
+        }
+    }
+    
     func getEmail() -> String? {
         if let email = emailField.text where email != "" {
             return email
@@ -112,6 +131,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     
     func goToCoursesFor(student: Student) {
+        print("Inside goToCourse")
         eraseTextFields()
         let vc = storyboard?.instantiateViewControllerWithIdentifier("CoursesTableVC") as! CoursesTableVC
         vc.student = student
@@ -120,8 +140,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     
     func eraseTextFields() {
-        emailField.text = ""
-        passwordField.text = ""
+        if emailField != nil && passwordField != nil {
+            emailField.text = ""
+            passwordField.text = ""
+        }
+        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -146,6 +169,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         if students.count >= 0 {
             for student in students {
                 if student.username == username {
+                    print("Found the student for the email")
                     return student
                 }
             }
@@ -177,6 +201,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     performUpdatesOnMain({ 
                         self.setUIEnabled(true)
                         let student = self.getStudent(email)
+                        self.saveUserLogin(email)
                         self.goToCoursesFor(student)
                     })
                 }
@@ -201,6 +226,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 } else {
                     performUpdatesOnMain({
                         self.setUIEnabled(true)
+                        self.saveUserLogin(email)
                         let student = self.getStudent(email)
                         self.goToCoursesFor(student)
                     })
@@ -226,6 +252,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 } else {
                     performUpdatesOnMain({
                         self.setUIEnabled(true)
+                        self.saveUserLogin(email)
                         let student = self.getStudent(email)
                         self.goToCoursesFor(student)
                     })

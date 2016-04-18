@@ -61,6 +61,7 @@ class CoursesTableVC: UITableViewController, NSFetchedResultsControllerDelegate 
     }
     
     func logout() {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(Constants.LAST_LOGGED_IN)
         dismissViewControllerAnimated(true, completion: nil)
     }
 

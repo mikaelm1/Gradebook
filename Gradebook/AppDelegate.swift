@@ -25,6 +25,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UITabBar.appearance().tintColor = UIColor.whiteColor()
         
+//        if let email = NSUserDefaults.standardUserDefaults().objectForKey(Constants.LAST_LOGGED_IN) as? String {
+//            let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
+//            let student = loginVC.getStudent(email)
+//            
+//            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CoursesTableVC") as! CoursesTableVC
+//            vc.student = student
+//            window?.rootViewController = vc
+//            window?.makeKeyAndVisible()
+//            
+//           
+//        }
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
