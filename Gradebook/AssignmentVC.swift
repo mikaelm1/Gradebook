@@ -11,6 +11,8 @@ import CoreData
 
 class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
+    // MARK: - Outlets and Variables
+    
     @IBOutlet weak var gradeScoreField: UITextField!
     @IBOutlet weak var gradeWeightField: UITextField!
     @IBOutlet weak var gradeReceivedField: UITextField!
@@ -24,6 +26,8 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     var sharedContext: NSManagedObjectContext {
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,17 +53,19 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     
     func fillInFieldsForAssignment(assignment: Assignment) {
         gradeReceivedField.text = assignment.gradeLetter
-        gradeWeightField.text = "\(assignment.gradeWeight)"
-        gradeScoreField.text = "\(assignment.gradeScore)"
+        gradeWeightField.text = "\(Int(assignment.gradeWeight))"
+        gradeScoreField.text = "\(Int(assignment.gradeScore))"
         assignmentTitleField.text = assignment.assignmentTitle
         assignmentDescriptionField.text = assignment.assignmentDescription
     }
     
     func setUpFields() {
+        
+        gradeScoreField.addTarget(self, action: #selector(AssignmentVC.textFieldEdited(_:)), forControlEvents: .EditingChanged)
+        gradeWeightField.addTarget(self, action: #selector(AssignmentVC.textFieldEdited(_:)), forControlEvents: .EditingChanged)
+        
         gradeReceivedField.delegate = self
-        gradeWeightField.delegate = self
         assignmentTitleField.delegate = self
-        //print(grades)
     }
     
     func setUpPickers() {
@@ -95,6 +101,11 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     
     func pickerCancelPressed() {
         gradeReceivedField.resignFirstResponder()
+        if assignment != nil {
+            gradeReceivedField.text = assignment?.gradeLetter
+        } else {
+            gradeReceivedField.text = ""
+        }
     }
     
     func sendAlert(message: String, fieldNeeded: UITextField) {
@@ -133,9 +144,29 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         return true
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        //textField.becomeFirstResponder()
-        return true
+    func textFieldEdited(sender: UITextField) {
+        guard let textToReplace = sender.text else {
+            return
+        }
+        if textToReplace.characters.count > 2 {
+            let ending = textToReplace.startIndex.advancedBy(2)
+            sender.text = textToReplace.substringToIndex(ending)
+        }
+        if Int(textToReplace) == nil {
+            return
+        }
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.tag == 0 {
+            let grades = Grade.GradeLetter.allGradesRaw
+            if grades.contains(string) {
+                return true
+            }
+        }
+        return false 
+
     }
 
     // MARK: - Actions

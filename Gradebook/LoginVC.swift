@@ -163,7 +163,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func singUpPresed(sender: AnyObject) {
      
-        
+        setUIEnabled(false)
         if let email = getEmail(), let password = getPassword() {
             setUIEnabled(false)
             FirebaseClient.sharedInstance().createUser(email, password: password, completionHandler: { (success, error) in
@@ -182,6 +182,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 }
             })
         } else {
+            setUIEnabled(true)
             sendAlert("Please enter an email and password in order to sign up.")
         }
         

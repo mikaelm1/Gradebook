@@ -26,6 +26,8 @@ struct Grade {
         
         static let allGrades = [A, AMinus, BPlus, B, BMinus, CPlus, C, CMinus, DPlus, D, DMinus, F]
         
+        static let allGradesRaw = [A.rawValue, AMinus.rawValue, BPlus.rawValue, B.rawValue, BMinus.rawValue, CPlus.rawValue, C.rawValue, CMinus.rawValue, DPlus.rawValue, D.rawValue, DMinus.rawValue, F.rawValue]
+        
         func getGradeValue() -> Double {
             switch self {
             case .A:
