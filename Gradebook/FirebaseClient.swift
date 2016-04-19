@@ -16,6 +16,8 @@ typealias FBCompletionHandler = (success: Bool, result: [String: AnyObject]?, er
 
 class FirebaseClient {
     
+    static let sharedInstance = FirebaseClient() 
+    
     let ref = Firebase(url: Constants.FIREBASE_URL)
     
     func attemptFacebookLogin(viewController: UIViewController, completionHandler: FBCompletionHandler) {
@@ -99,13 +101,6 @@ class FirebaseClient {
             
         })
         
-    }
-    
-    class func sharedInstance() -> FirebaseClient {
-        struct Singletion {
-            static var sharedInstance = FirebaseClient()
-        }
-        return Singletion.sharedInstance 
     }
     
 }

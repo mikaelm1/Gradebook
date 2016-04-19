@@ -189,7 +189,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         setUIEnabled(false)
         if let email = getEmail(), let password = getPassword() {
             setUIEnabled(false)
-            FirebaseClient.sharedInstance().createUser(email, password: password, completionHandler: { (success, error) in
+            FirebaseClient.sharedInstance.createUser(email, password: password, completionHandler: { (success, error) in
                 
                 if error != nil {
                     performUpdatesOnMain({
@@ -215,7 +215,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBAction func signInPressed(sender: AnyObject) {
         setUIEnabled(false)
         if let email = getEmail(), let password = getPassword() {
-            FirebaseClient.sharedInstance().attemptLogin(email, password: password, completionHandler: { (success, error) in
+            FirebaseClient.sharedInstance.attemptLogin(email, password: password, completionHandler: { (success, error) in
                 
                 if error != nil {
                     performUpdatesOnMain({
@@ -267,7 +267,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBAction func facebookLoginPressed(sender: AnyObject) {
         setUIEnabled(false)
         
-        FirebaseClient.sharedInstance().attemptFacebookLogin(self) { (success, result, error) in
+        FirebaseClient.sharedInstance.attemptFacebookLogin(self) { (success, result, error) in
             
             if error != nil {
                 performUpdatesOnMain({
