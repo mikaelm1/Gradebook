@@ -31,7 +31,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         emailField.delegate = self
         passwordField.delegate = self
-        //getLastLoggedIn()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -279,6 +278,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 let email = result!["email"] as! String
                 performUpdatesOnMain({
                     self.setUIEnabled(true)
+                    self.saveUserLogin(email)
                     let student = self.getStudent(email)
                     self.goToCoursesFor(student)
                 })

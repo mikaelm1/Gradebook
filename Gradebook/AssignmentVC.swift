@@ -151,19 +151,21 @@ class AssignmentVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             sender.text = textToReplace.substringToIndex(ending)
         }
         if Int(textToReplace) == nil {
-            return
+            sender.text = String(textToReplace.characters.dropLast())
         }
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
-        if textField.tag == 0 {
+        if textField.tag == 1 {
             let grades = Grade.GradeLetter.allGradesRaw
             if grades.contains(string) {
                 return true
+            } else {
+                return false 
             }
         }
-        return false 
+        return true
 
     }
 

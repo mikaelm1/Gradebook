@@ -55,7 +55,7 @@ class FirebaseClient {
             } else {
                 
                 guard let result = result as? [String: AnyObject] else {
-                    completionHandler(success: false, result: nil, error: "Error parsing Facebook's result")
+                    completionHandler(success: false, result: nil, error: "There was an error logging in")
                     return 
                 }
                 print("FACEBOOK GRAPH RESULT: \(result)")
