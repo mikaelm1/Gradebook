@@ -1,8 +1,8 @@
 # Gradebook
-An iOS app built with Swift 2.2 and Xcode 7.3. Uses Core Data, Firebase, and Alamofire. Allows users to record their courses and assignments and calculates the grade in a course based on the assignments entered. 
+An iOS app built with Swift 2.2 and Xcode 7.3. Uses Core Data, Firebase, and CocoaPods. Allows users to record their courses and assignments and calculates the grade in a course based on the assignments entered. 
 
 ## Required
-Need to have the latest version of Swift and Xcode in order for Alamofire to work.
+Need to have the latest version of Swift and Xcode in order for CocoaPods to work.
 
 ## Usage
 A user can login with either their Facebook account, Udacity account, or create an account by entering an email and password in the login page and pressing the "Sign Up" button. The information saved through Core Data will be associated with each account. One user logging in with different accounts (eg. Facebook and Udacity) will be treated as two different users and Core Data will fetch and save the data that is connected with each account and its associated email address. If a user uses the same email for two or more different accounts, he or she will be treated as the same user.  
